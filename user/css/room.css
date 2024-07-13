@@ -1,0 +1,94 @@
+/* body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+} */
+.user-menu {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.user-menu .logo {
+    margin-left: 20px;
+}
+
+.user-menu .logo a {
+    color: #fff;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.user-menu .logo img {
+    max-height: 65px; /* Increased the max height of the logo */
+    margin-right: 10px;
+}
+
+.user-menu .menu-items {
+    display: flex;
+}
+
+.user-menu .menu-items li {
+    list-style-type: none;
+    margin: 0 10px;
+}
+
+.user-menu .menu-items a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.user-menu .menu-items a:hover {
+    background-color: #555;
+}
+
+
+.rooms {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.room {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.room > * {
+    margin: 0 10px;
+}
+
+.student-box,
+.teacher-box,
+.empty-box {
+    display: inline-block;
+    width: 100px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: white;
+}
+
+.gender-male {
+    background-color: blue;
+}
+
+.gender-female {
+    background-color: pink;
+}
+
+.gender-empty {
+    background-color: lightgray;
+}
