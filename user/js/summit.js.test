@@ -1,0 +1,104 @@
+const openCameraBtn = document.getElementById('openCamera');
+const closeCameraBtn = document.getElementById('closeCamera');
+const capturePhotoBtn = document.getElementById('capturePhoto');
+const savePhotoBtn = document.getElementById('savePhoto');
+const cameraModal = document.getElementById('cameraModal');
+const cameraFeed = document.getElementById('cameraFeed');
+const photoCanvas = document.getElementById('photoCanvas');
+const photoGallery = document.getElementById('photoGallery');
+
+
+let stream;
+let capturedPhoto;
+
+openCameraBtn.addEventListener('click', async () => {
+  try {
+    stream = await navigator.mediaDevices.getUserMedia({ video: true });
+    cameraFeed.srcObject = stream;
+    cameraModal.style.display = 'block';
+  } catch (err) {
+    console.error('Error accessing camera:', err);
+    alert('Unable to access the camera. Please make sure you have granted the necessary permissions.');
+  }
+});
+
+closeCameraBtn.addEventListener('click', () => {
+  if (stream) {
+    stream.getTracks().forEach(track => track.stop());
+  }
+  cameraModal.style.display = 'none';
+});
+
+capturePhotoBtn.addEventListener('click', () => {
+  const width = cameraFeed.videoWidth;
+  const height = cameraFeed.videoHeight;
+  photoCanvas.width = width;
+  photoCanvas.height = height;
+  const context = photoCanvas.getContext('2d');
+  context.drawImage(cameraFeed, 0, 0, width, height);
+  capturedPhoto = photoCanvas.toDataURL('image/jpeg');
+  cameraFeed.style.display = 'none';
+  capturePhotoBtn.style.display = 'none';
+  savePhotoBtn.style.display = 'block';
+});
+
+savePhotoBtn.addEventListener('click', async () => {
+    try {
+      const photoData = await fetchPhotoData();
+      await savePhotoToDatabase(photoData);
+      displayCapturedPhoto(photoData);
+      closeCameraBtn.click();
+    } catch (err) {
+      console.error('Error saving photo:', err);
+      alert('Unable to save the photo. Please try again later.');
+    }
+  });
+
+  async function fetchPhotoData() {
+    const width = cameraFeed.videoWidth;
+    const height = cameraFeed.videoHeight;
+    photoCanvas.width = width;
+    photoCanvas.height = height;
+    const context = photoCanvas.getContext('2d');
+    context.drawImage(cameraFeed, 0, 0, width, height);
+    return photoCanvas.toDataURL('image/jpeg');
+  }
+
+  async function savePhotoToDatabase(photoData) {
+    const response = await fetch('/save-photo', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ photoData })
+    });
+
+    if (!response.ok) {
+      throw new Error('Failed to save photo to the database');
+    }
+  }
+
+  function displayCapturedPhoto(photoData) {
+    const img = document.createElement('img');
+    img.src = photoData;
+    img.classList.add('photo-thumbnail');
+    photoGallery.appendChild(img);
+  }
+
+function savePhotoToDatabase(photo) {
+  // Implement the logic to save the photo to the database
+  console.log('Saving photo to the database:', photo);
+}
+
+function displayCapturedPhoto(photo) {
+  const img = document.createElement('img');
+  img.src = photo;
+  img.classList.add('photo-thumbnail');
+  photoGallery.appendChild(img);
+}
+
+window.addEventListener('click', (e) => {
+  if (e.target === cameraModal) {
+    closeCameraBtn.click();
+  }
+});

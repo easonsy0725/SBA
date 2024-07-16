@@ -1,15 +1,92 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="../css/schedule.css">
-    </head>
-    <body>
-        
-        <script src="" async defer></script>
-    </body>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>User Page</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../css/schedule.css">
+  <script src="schedule.js"></script>
+</head>
+<body>
+    <div class="user-menu">
+      <div class="logo">
+        <a href="userPage.html">
+          <img src="../../image/logo.png" alt="Web Logo">
+        </a>
+      </div>
+      <ul class="menu-items">
+        <li><a href="html/schedule.html">Schedule</a></li>
+        <li><a href="html/room.html">Room</a></li>
+      </ul>
+    </div>
+  
+    <h1>Tokyo Tech Tour Schedule</h1>
+  
+    <div class="schedule-container">
+      <div class="schedule-item">
+        <h3>Date: 2024-07-11</h3>
+        <p>Location: Tokyo, Japan</p>
+        <p>Attractions:</p>
+        <ul>
+          <li>Tour of the JCII Camera Museum</li>
+          <li>Workshop at the NTT Docomo R&D Center</li>
+        </ul>
+        <button onclick="openMap('JCII Camera Museum')">View on Map</button>
+        <button onclick="openMap('NTT Docomo R&D Center')">View on Map</button>
+      </div>
+  
+      <div class="schedule-item">
+        <h3>Date: 2024-07-12</h3>
+        <p>Location: Tokyo, Japan</p>
+        <p>Attractions:</p>
+        <ul>
+          <li>Visit to the Tsukuba Space Center</li>
+          <li>Tour of the Toyota Automobile Museum</li>
+        </ul>
+        <button onclick="openMap('Tsukuba Space Center')">View on Map</button>
+        <button onclick="openMap('Toyota Automobile Museum')">View on Map</button>
+      </div>
+  
+      <div class="schedule-item">
+        <h3>Date: 2024-07-13</h3>
+        <p>Location: Tokyo, Japan</p>
+        <p>Attractions:</p>
+        <ul>
+          <li>Visit to the Mitsubishi Electric Showroom</li>
+          <li>Tour of the Toshiba Science Museum</li>
+          <li>Visit to the Kawasaki Robostage</li>
+        </ul>
+        <button onclick="openMap('Mitsubishi Electric Showroom Tokyo')">View on Map</button>
+        <button onclick="openMap('Toshiba Science Museum')">View on Map</button>
+        <button onclick="openMap('Kawasaki Robostage')">View on Map</button>
+      </div>
+  
+      <div class="schedule-item">
+        <h3>Date: 2024-07-14</h3>
+        <p>Location: Tokyo, Japan</p>
+        <p>Attractions:</p>
+        <ul>
+          <li>Visit to the Akihabara Electronics District</li>
+          <li>Workshop at the BioClub Tokyo</li>
+          <li>Visit to the Shibuya City</li>
+        </ul>
+        <button onclick="openMap('Akihabara Electronics District')">View on Map</button>
+        <button onclick="openMap('BioClub Tokyo')">View on Map</button>
+        <button onclick="openMap('Shibuya City')">View on Map</button>
+      </div>
+  
+      <div class="schedule-item">
+        <h3>Date: 2024-07-15</h3>
+        <p>Location: Tokyo, Japan</p>
+        <p>Attractions:</p>
+        <ul>
+          <li>Lecture at the Tokyo Institute of Technology</li>
+        </ul>
+        <button onclick="openMap('Tokyo Institute of Technology')">View on Map</button>
+      </div>
+    </div>
+    <script src="../js/schedule.js" async defer></script>
+  </body>
 </html>
