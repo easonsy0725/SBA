@@ -47,3 +47,42 @@
     max-height: 25px; /* Set the max height of the settings icon */
     vertical-align: middle; /* Align the image vertically with the text */
 }
+
+h1 {
+  margin-top: 20px;
+  text-align: center;
+}
+
+p {
+  margin: 20px;
+}
+
+.schedule-container {
+  margin: 20px;
+}
+
+.schedule-item {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.schedule-item h3 {
+  margin-top: 0;
+}
+
+.schedule-item p {
+  margin: 5px 0;
+}
+
+.schedule-item button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+}
