@@ -47,3 +47,61 @@
     max-height: 25px; /* Set the max height of the settings icon */
     vertical-align: middle; /* Align the image vertically with the text */
 }
+.weather-section {
+    background-color: #f0f8ff;
+    padding: 2.5rem;
+    border-radius: 16px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    text-align: center;
+}
+
+.weather-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.weather-icon {
+    font-size: 5rem;
+    margin-right: 2rem;
+    color: orange;
+}
+
+.weather-details {
+    text-align: left;
+}
+
+#weather-description {
+    text-align: left;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.weather-metrics {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1.5rem;
+}
+
+.weather-metric {
+    display: flex;
+    align-items: center;
+    font-size: 1.2rem;
+    color: #666;
+}
+
+.weather-metric i {
+    font-size: 1.5rem;
+    margin-right: 0.5rem;
+    color: rgb(0, 119, 255)
+}
+
+#weather-temperature,
+#weather-wind,
+#weather-humidity {
+    font-size: 1.5rem;
+    font-weight: bold;
+}

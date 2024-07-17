@@ -2,11 +2,11 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
+        <title>Home</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="css/user.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
     </head>
     <body>
         <div class="user-menu">
@@ -20,9 +20,32 @@
               <li><a href="html/room.html">Room</a></li>
             </ul>
         </div>
-        <h1>Today's schedule</h1>
-        <p></p>
         
+        <div class="weather-section">
+          <h2>Today's Weather in Tokyo, Japan</h2>
+          <div class="weather-container">
+              <div class="weather-icon">
+                  <i class="fas fa-sun"></i>
+              </div>
+              <div class="weather-details">
+                  <p id="weather-description"></p>
+                  <div class="weather-metrics">
+                      <div class="weather-metric">
+                          <i class="fas fa-thermometer-half"></i>
+                          <p id="weather-temperature"></p>
+                      </div>
+                      <div class="weather-metric">
+                          <i class="fas fa-wind"></i>
+                          <p id="weather-wind"></p>
+                      </div>
+                      <div class="weather-metric">
+                          <i class="fas fa-tint"></i>
+                          <p id="weather-humidity"></p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+        </div>        
         <script src="js/user.js" async defer></script>
     </body>
 </html>
