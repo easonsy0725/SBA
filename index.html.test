@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin and User Web Application</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="container">
+    <div class="login-container">
+      <h1>Login with Google</h1>
+      <button id="googleLoginBtn">Login with Google</button>
+    </div>
+
+    <div class="admin-container">
+      <h1>Admin Page</h1>
+      <p>Welcome, admin!</p>
+      <!-- Add admin-specific content here -->
+    </div>
+
+    <div class="user-container">
+      <h1>User Page</h1>
+      <p>Welcome, user!</p>
+      <!-- Add user-specific content here -->
+    </div>
+  </div>
+
+  <!-- Include the Google Sign-In API -->
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
