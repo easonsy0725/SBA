@@ -9,55 +9,60 @@
         <link rel="stylesheet" href="../css/schedule.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
     </head>
-    <body>
-        <div class="admin-menu">
-            <div class="logo">
-              <a href="../adminPage.html">
-                <img src="../../image/logo.png" alt="Web Logo">
+  <body>
+      <div class="admin-menu">
+          <div class="logo">
+            <a href="../adminPage.html">
+              <img src="../../image/logo.png" alt="Web Logo">
+            </a>
+          </div>
+          <ul class="menu-items">
+            <li><a href="schedule.html">Schedule</a></li>
+            <li><a href="room.html">Room</a></li>
+            <li><a href="student.html">Student</a></li>
+            <li>
+              <a href="setting.html">
+                <img src="../../image/setting.png" alt="Settings">
               </a>
-            </div>
-            <ul class="menu-items">
-              <li><a href="schedule.html">Schedule</a></li>
-              <li><a href="room.html">Room</a></li>
-              <li><a href="student.html">Student</a></li>
-              <li>
-                <a href="setting.html">
-                  <img src="../../image/setting.png" alt="Settings">
-                </a>
-              </li>
-            </ul>
-        </div>
-        <div class="dateSelecter">
-          <button onclick="loadSchedule('schedule.html')">11</button>
-          <button onclick="loadSchedule('day2.html')">12</button>
-          <button onclick="loadSchedule('day3.html')">13</button>
-          <button onclick="loadSchedule('day4.html')">14</button>
-          <button onclick="loadSchedule('day5.html')">15</button>
-        </div>
+            </li>
+          </ul>
+      </div>
+
+    <div class="dateSelecter">
+      <button onclick="loadSchedule('schedule.html')">11</button>
+      <button onclick="loadSchedule('schedule/day2.html')">12</button>
+      <button onclick="loadSchedule('schedule/day3.html')">13</button>
+      <button onclick="loadSchedule('schedule/day4.html')">14</button>
+      <button onclick="loadSchedule('schedule/day5.html')">15</button>
+    </div>
+
+    <div class="schedule-container">
+      <div class="schedule-item">
+        <h3>Date: 2024-07-11</h3>
+        <p>Location: Hong Kong International Airport, HongKong</p>
+        <p>Journey:</p>
+        <img src="../../image/attractions/hk.jpg" alt="Hong Kong International Airport">
+        <ul>
+          <li>Meet at Hong Kong International Airport</li>
+        </ul>
+        <button onclick="openMap('Hong Kong International Airport')">View on Map</button>
+      </div>
+
+      <div class="schedule-item">
+        <p>Location: Tokyo, Japan</p>
+        <p>Journey:</p>
+        <img src="../../image/attractions/NTT.jpg" alt="NTT Docomo R&D Center">
+        <ul>
+          <li>Workshop at the NTT Docomo R&D Center</li>
+        </ul>
+        <button onclick="openMap('NTT Docomo R&D Center')">View on Map</button>
+      </div>
+    </div>
     
-        <div class="schedule-container">
-          <div class="schedule-item">
-            <h3>Date: 2024-07-11</h3>
-            <p>Location: Hong Kong International Airport, HongKong</p>
-            <p>Journey:</p>
-            <img src="../../image/attractions/hk.jpg" alt="Hong Kong International Airport">
-            <ul>
-              <li>Meet at Hong Kong International Airport</li>
-            </ul>
-            <button onclick="openMap('Hong Kong International Airport')">View on Map</button>
-          </div>
-    
-          <div class="schedule-item">
-            <p>Location: Tokyo, Japan</p>
-            <p>Journey:</p>
-            <img src="../../image/attractions/NTT.jpg" alt="NTT Docomo R&D Center">
-            <ul>
-              <li>Workshop at the NTT Docomo R&D Center</li>
-            </ul>
-            <button onclick="openMap('NTT Docomo R&D Center')">View on Map</button>
-          </div>
-        </div>
-        
+    <div class="submit-container">
+      <button class="submit-button" onclick="loadSchedule('Summit.html')">Submit</button>
+    </div>
+
     <script src="../js/schedule.js" async defer></script>
-    </body>
+  </body>
 </html>

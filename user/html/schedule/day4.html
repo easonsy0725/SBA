@@ -1,29 +1,29 @@
 <!DOCTYPE html>
 <html>
   <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Schedule</title>
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="../css/day4.css">
-  <script src="schedule.js"></script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Schedule</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../../css/schedule.css">
+    <script src="../../js/schedule.js"></script>
   </head>
   <body>
     <div class="user-menu">
       <div class="logo">
-        <a href="../userPage.html">
-          <img src="../../image/logo.png" alt="Web Logo">
+        <a href="../../userPage.html">
+          <img src="../../../image/logo.png" alt="Web Logo">
         </a>
       </div>
       <ul class="menu-items">
-        <li><a href="schedule.html">Schedule</a></li>
-        <li><a href="room.html">Room</a></li>
+        <li><a href="../schedule.html">Schedule</a></li>
+        <li><a href="../room.html">Room</a></li>
       </ul>
     </div>
 
     <div class="dateSelecter">
-      <button onclick="loadSchedule('schedule.html')">11</button>
+      <button onclick="loadSchedule('../schedule.html')">11</button>
       <button onclick="loadSchedule('day2.html')">12</button>
       <button onclick="loadSchedule('day3.html')">13</button>
       <button onclick="loadSchedule('day4.html')">14</button>
@@ -35,7 +35,7 @@
         <h3>Date: 2024-07-14</h3>
         <p>Location: Tokyo, Japan</p>
         <p>Journey:</p>
-        <img src="../../image/attractions/akihabara.jpg" alt="Akihabara Electronics District">
+        <img src="../../../image/attractions/akihabara.jpg" alt="Akihabara Electronics District">
         <ul>
           <li>Visit to the Akihabara Electronics District</li>
         </ul>
@@ -44,7 +44,7 @@
 
       <div class="schedule-item">
         <p>Journey:</p>
-        <img src="../../image/attractions/bioclub.jpg" alt="BioClub Tokyo">
+        <img src="../../../image/attractions/bioclub.jpg" alt="BioClub Tokyo">
         <ul>
           <li>Workshop at the BioClub Tokyo</li>
         </ul>
@@ -53,7 +53,7 @@
 
       <div class="schedule-item">
         <p>Journey:</p>
-        <img src="../../image/attractions/shibuya.jpg" alt="Shibuya City">
+        <img src="../../../image/attractions/shibuya.jpg" alt="Shibuya City">
         <ul>
           <li>Visit to the Shibuya City</li>
         </ul>
@@ -61,6 +61,10 @@
       </div>
     </div>
 
-    <script src="../js/schedule.js" async defer></script>
+    <div class="submit-container">
+      <button class="submit-button" onclick="loadSchedule('../summit/day4Summit.html')">Submit</button>
+    </div>
+
+    <script src="../../js/schedule.js" async defer></script>
   </body>
 </html>

@@ -3,7 +3,7 @@ body {
   font-family: Arial, sans-serif;
 }
 
-.user-menu {
+.admin-menu {
   background-color: #333;
   color: #fff;
   padding: 10px 0;
@@ -12,91 +12,45 @@ body {
   align-items: center;
 }
 
-.user-menu .logo {
+.admin-menu .logo {
   margin-left: 20px;
 }
 
-.user-menu .logo a {
+.admin-menu .logo a {
   color: #fff;
   text-decoration: none;
   display: flex;
   align-items: center;
 }
 
-.user-menu .logo img {
-  max-height: 65px;
+.admin-menu .logo img {
+  max-height: 65px; /* Increased the max height of the logo */
   margin-right: 10px;
 }
 
-.user-menu .menu-items {
+.admin-menu .menu-items {
   display: flex;
-  margin-right: 20px;
 }
 
-.user-menu .menu-items li {
+.admin-menu .menu-items li {
   list-style-type: none;
   margin: 0 10px;
 }
 
-.user-menu .menu-items a {
+.admin-menu .menu-items a {
   color: #fff;
   text-decoration: none;
   padding: 10px 20px;
   border-radius: 5px;
 }
 
-.user-menu .menu-items a:hover {
+.admin-menu .menu-items a:hover {
   background-color: #555;
 }
 
-h1 {
-  margin-top: 20px;
-  text-align: center;
-}
-
-p {
-  margin: 20px;
-}
-
-.schedule-container {
-  margin: 20px;
-}
-
-.schedule-item {
-  border: 1px solid #ccc;
-  padding: 10px;
-  margin-bottom: 10px;
-}
-
-.schedule-item h3 {
-  margin-top: 0;
-}
-
-.schedule-item p {
-  margin: 5px 0;
-}
-
-.schedule-item .attraction-image {
-  display: flex;
-  justify-content: center;
-}
-
-.schedule-item img {
-  max-width: 300px;
-  max-height: 200px;
-  object-fit: contain;
-}
-
-.schedule-item button {
-  background-color: #4CAF50;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  cursor: pointer;
+.admin-menu .menu-items li a img {
+  max-height: 25px; /* Set the max height of the settings icon */
+  vertical-align: middle; /* Align the image vertically with the text */
 }
 
 .dateSelecter {
@@ -127,4 +81,28 @@ p {
 .dateSelecter button.active {
   background-color: #4CAF50;
   color: white;
+}
+
+.submit-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.submit-button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.submit-button:hover {
+  background-color: #45a049;
 }
