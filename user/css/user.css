@@ -6,40 +6,46 @@
     justify-content: space-between; 
     align-items: center; 
 }
+
 .user-menu .logo {
-margin-left: 20px;
+    margin-left: 20px;
 }
 
 .user-menu .logo a {
-color: #fff;
-text-decoration: none;
-display: flex;
-align-items: center;
+    color: #fff;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
 }
 
 .user-menu .logo img {
-max-height: 65px; /* Increased the max height of the logo */
-margin-right: 10px;
+    max-height: 65px; /* Increased the max height of the logo */
+    margin-right: 10px;
 }
 
 .user-menu .menu-items {
-display: flex;
+    display: flex;
 }
 
 .user-menu .menu-items li {
-list-style-type: none;
-margin: 0 10px;
+    list-style-type: none;
+    margin: 0 10px;
 }
 
 .user-menu .menu-items a {
-color: #fff;
-text-decoration: none;
-padding: 10px 20px;
-border-radius: 5px;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
 }
 
 .user-menu .menu-items a:hover {
-background-color: #555;
+    background-color: #555;
+}
+
+.user-menu .menu-items li a img {
+    max-height: 25px; /* Set the max height of the settings icon */
+    vertical-align: middle; /* Align the image vertically with the text */
 }
 
 .weather-section {
