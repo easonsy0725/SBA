@@ -151,3 +151,158 @@ p {
 .submit-button:hover {
   background-color: #45a049;
 }
+
+@media (max-width: 767px) {
+  .admin-menu {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    display: flex;
+  }
+
+  .admin-menu .logo {
+    margin-bottom: 10px;
+  }
+
+  .admin-menu .logo a {
+    color: #fff;
+    text-decoration: none;
+    display: flex;
+  }
+
+  .admin-menu .logo img {
+    max-height: 50px;
+    margin-right: 5px;
+  }
+
+  .admin-menu .menu-items {
+    display: flex;
+    align-items: center;
+    margin-right: 0;
+  }
+
+  .admin-menu .menu-items li {
+    list-style-type: none;
+    margin: 5px 0;
+  }
+
+  .admin-menu .menu-items a {
+    color: #fff;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+
+  .admin-menu .menu-items a:hover {
+    background-color: #555;
+  }
+
+  h1 {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 24px;
+  }
+
+  p {
+    margin: 10px;
+    font-size: 14px;
+  }
+
+  .schedule-container {
+    margin: 10px;
+  }
+
+  .schedule-item {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+
+  .schedule-item h3 {
+    margin-top: 0;
+    font-size: 18px;
+  }
+
+  .schedule-item p {
+    margin: 5px 0;
+    font-size: 14px;
+  }
+
+  .schedule-item .attraction-image {
+    display: flex;
+    justify-content: center;
+  }
+
+  .schedule-item img {
+    max-width: 100%;
+    max-height: 150px;
+    object-fit: contain;
+  }
+
+  .schedule-item button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    cursor: pointer;
+  }
+
+  .dateSelecter {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+  }
+
+  .dateSelecter button {
+    background-color: #f1f1f1;
+    border: none;
+    color: #333;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 2px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+
+  .dateSelecter button:hover {
+    background-color: #ddd;
+  }
+
+  .dateSelecter button.active {
+    background-color: #4CAF50;
+    color: white;
+  }
+
+  .submit-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .submit-button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+
+  .submit-button:hover {
+    background-color: #45a049;
+  }
+}

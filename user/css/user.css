@@ -108,6 +108,50 @@
 }
 
 @media (max-width: 480px){
+    .user-menu {
+        background-color: #333;
+        color: #fff;
+        padding: 10px;
+        display: flex;
+    }
+    
+    .user-menu .logo {
+        margin-bottom: 10px;
+    }
+
+    .user-menu .logo a {
+        color: #fff;
+        text-decoration: none;
+        display: flex;
+    }
+
+    .user-menu .logo img {
+        max-height: 50px;
+        margin-right: 5px;
+    }
+
+    .user-menu .menu-items {
+        display: flex;
+        align-items: center;
+        margin-right: 0;
+    }
+
+    .user-menu .menu-items li {
+        list-style-type: none;
+        margin: 5px 0;
+    }
+
+    .user-menu .menu-items a {
+        color: #fff;
+        text-decoration: none;
+        padding: 5px 10px;
+        border-radius: 5px;
+    }
+
+    .user-menu .menu-items a:hover {
+        background-color: #555;
+    }
+
     .weather-icon {
         font-size: 4.5rem;
         margin-right: 0rem;
