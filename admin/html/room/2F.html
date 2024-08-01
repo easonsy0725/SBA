@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Room</title>
+        <link rel="icon" type="image/x-icon" href="../../../image/icon.ico">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../../css/room.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    </head>
+    <body>
+        <div class="admin-menu">
+            <div class="logo">
+              <a href="../../adminPage.html">
+                <img src="../../../image/logo.png" alt="Web Logo">
+              </a>
+            </div>
+            <ul class="menu-items">
+              <li><a href="../schedule.html">Schedule</a></li>
+              <li><a href="../room.html">Room</a></li>
+              <li><a href="../student.html">Student</a></li>
+              <li>
+                <a href="setting.html">
+                  <img src="../../../image/setting.png" alt="Settings">
+                </a>
+              </li>
+            </ul>
+        </div>
+
+        <div class="dateSelecter">
+          <button onclick="loadSchedule('../room.html')">1/F</button>
+          <button onclick="loadSchedule('2F.html')">2/F</button>
+          <button onclick="loadSchedule('3F.html')">3/F</button>
+          <button onclick="loadSchedule('4F.html')">4/F</button>
+          <button onclick="loadSchedule('5F.html')">5/F</button>
+        </div>
+
+        <div class="rooms">
+          <div class="room">
+            <h2>Room 201</h2>
+            <span class="student-box" data-gender="female">Student5</span>
+            <span class="student-box" data-gender="female">Student6</span>
+          </div>
+          <div class="room">
+            <h2>Room 202</h2>
+            <span class="student-box" data-gender="female">Student7</span>
+            <span class="student-box" data-gender="female">Student8</span>
+          </div>
+        </div>
+
+      <script src="../../js/room.js" async defer></script>
+
+    </body>
+</html>

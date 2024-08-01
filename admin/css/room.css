@@ -47,3 +47,77 @@
     max-height: 25px; /* Set the max height of the settings icon */
     vertical-align: middle; /* Align the image vertically with the text */
 }
+
+.dateSelecter {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.dateSelecter button {
+    background-color: #f1f1f1;
+    border: none;
+    color: #333;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.dateSelecter button:hover {
+    background-color: #ddd;
+}
+
+.dateSelecter button.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.rooms {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.room {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.room > * {
+    margin: 0 10px;
+}
+
+.student-box,
+.teacher-box,
+.empty-box {
+    display: inline-block;
+    width: 100px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.gender-male {
+    background-color: blue;
+    color: white;
+}
+
+.gender-female {
+    background-color: deeppink;
+    color: white;
+}
+
+.gender-empty {
+    background-color: lightgray;
+    color: black;
+}
