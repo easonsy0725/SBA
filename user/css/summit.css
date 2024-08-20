@@ -136,8 +136,24 @@
   position: absolute;
   top: -10px;
   left: 10px;
-  background-color: #fff;
+  background-color: transparent;
   transition: all .3s ease;
+}
+
+.form .group input:placeholder-shown + label,
+.form .group textarea:placeholder-shown + label {
+  top: 10px;
+  background-color: transparent;
+}
+
+.form .group input:focus + label,
+.form .group textarea:focus + label {
+  top: -10px;
+  left: 10px;
+  background-color: #fff;
+  color: #3366cc;
+  font-weight: 600;
+  font-size: 14px;
 }
 
 .form .group input,
@@ -190,6 +206,29 @@
   background-color: #27408b;
 }
 
+input[type="file"] {
+  display: none;
+}
+
+/* Style the custom button */
+.custom-button {
+  background-color: #4CAF50; /* Green background */
+  border: none; /* Remove borders */
+  color: white; /* White text */
+  padding: 15px 32px; /* Some padding */
+  text-align: center; /* Centered text */
+  text-decoration: none; /* Remove underline */
+  display: inline-block; /* Make the button inline */
+  font-size: 16px; /* Increase font size */
+  margin: 4px 2px; /* Some margin */
+  margin-bottom: 10px;
+  cursor: pointer; /* Pointer/hand icon */
+  border-radius: 12px; /* Rounded corners */
+}
+
+.custom-button:hover {
+  background-color: #45a049; /* Darker green on hover */
+}
 
 
 @media (max-width: 767px) {

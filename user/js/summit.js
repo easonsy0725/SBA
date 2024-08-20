@@ -3,6 +3,11 @@ function loadSchedule(page) {
   window.location.href = page;
 }
 
+document.getElementById('fileInput').addEventListener('change', function() {
+  // You can handle the file selection here
+  console.log(this.files[0].name);
+});
+
 // Wait for the DOM to be fully loaded
 document.addEventListener('DOMContentLoaded', function() {
   // Get the form element
