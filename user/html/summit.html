@@ -8,7 +8,6 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="../css/summit.css">
-    <script src="../js/summit.js"></script>
   </head>
   <body>
     <div class="user-menu">
@@ -35,33 +34,35 @@
       <div class="card">
         <span class="title">Day 1</span>
         <form class="form" id="summit-form" data-redirect-url="schedule.html" enctype="multipart/form-data">
-
           <div class="group">
-            <input type="file" id="fileInput" name="image" accept="image/*" capture="camera">
-            <button class="custom-button" onclick="document.getElementById('fileInput').click();">Take Photo For Journey 1</button>
+            <input type="file" id="fileInput1" name="image1" accept="image/*" capture="camera">
+            <button class="custom-button" onclick="openFileInput('fileInput1');">Take Photo For Journey 1</button>
+            <div class="preview" id="preview1"></div>
+            <div class="delete-btn" onclick="deletePreview('preview1')"></div>
           </div>
 
           <div class="group">
-            <textarea placeholder="" id="comment" name="comment" rows="5"></textarea>
-            <label class="journey" for="comment">Comment For Journey 1</label>
+            <textarea placeholder="" id="comment1" name="comment1" rows="5"></textarea>
+            <label class="journey" for="comment1">Comment For Journey 1</label>
           </div>
 
           <div class="group">
-            <input type="file" id="fileInput" name="image" accept="image/*" capture="camera">
-            <button class="custom-button" onclick="document.getElementById('fileInput').click();">Take Photo For Journey 2</button>
+            <input type="file" id="fileInput2" name="image2" accept="image/*" capture="camera">
+            <button class="custom-button" onclick="openFileInput('fileInput2');">Take Photo For Journey 2</button>
+            <div class="preview" id="preview2"></div>
+            <div class="delete-btn" onclick="deletePreview('preview2')"></div>
           </div>
 
           <div class="group">
-            <textarea placeholder="" id="comment" name="comment" rows="5"></textarea>
-            <label class="journey" for="comment">Comment For Journey 2</label>
+            <textarea placeholder="" id="comment2" name="comment2" rows="5"></textarea>
+            <label class="journey" for="comment2">Comment For Journey 2</label>
           </div>
 
-          <button type="submit" id="submitButton" >Submit</button>
+          <button type="submit" id="submitButton">Submit</button>
         </form>
       </div>
     </div>
 
-    <script src="../js/summit.js" async defer></script>
-    
+    <script src="../js/summit.js"></script>
   </body>
 </html>
