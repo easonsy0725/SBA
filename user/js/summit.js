@@ -1,19 +1,20 @@
-// change page
+// Change the page by redirecting the user to a new URL
 function loadSchedule(page) {
   window.location.href = page;
 }
 
+// Open a file input by clicking on it programmatically
 function openFileInput(inputId) {
   document.getElementById(inputId).click();
 }
 
+// Add an event listener to the first file input to handle file selection
 document.getElementById('fileInput1').addEventListener('change', function() {
-  // You can handle the file selection here
   console.log(this.files[0].name);
 });
 
+// Add an event listener to the second file input to handle file selection
 document.getElementById('fileInput2').addEventListener('change', function() {
-  // You can handle the file selection here
   console.log(this.files[0].name);
 });
 
@@ -22,15 +23,12 @@ document.addEventListener('DOMContentLoaded', function() {
   // Get the form element
   var form = document.getElementById('summit-form');
 
-  // Add an event listener for the 'submit' event
+  // Add an event listener for the 'submit' event on the form
   form.addEventListener('submit', function(event) {
     event.preventDefault(); // Prevent the default form submission behavior
 
     // Get the redirect URL from the data-redirect-url attribute
     var redirectUrl = this.getAttribute('data-redirect-url');
-
-    // Perform any desired form processing or validation here
-    // ...
 
     // Redirect the user to the specified URL
     window.location.href = redirectUrl;
@@ -43,15 +41,16 @@ document.addEventListener('DOMContentLoaded', function() {
   takePhotoButtons.forEach(function(button) {
     button.addEventListener('click', function(event) {
       event.preventDefault(); // Prevent the default button click behavior
-      // Add your custom logic for handling the "Take Photo" button click here
     });
   });
 });
 
+// Open a file input by clicking on it programmatically
 function openFileInput(inputId) {
   document.getElementById(inputId).click();
 }
 
+// Preview an image selected in a file input
 function previewImage(event, previewId) {
   const preview = document.getElementById(previewId);
   preview.innerHTML = '<div class="delete-btn" onclick="deletePreview(\'' + previewId + '\')">x</div>';
@@ -67,17 +66,20 @@ function previewImage(event, previewId) {
   }
 }
 
+// Delete the preview of an image
 function deletePreview(previewId) {
   const preview = document.getElementById(previewId);
   preview.innerHTML = '';
 }
 
+// Add event listeners for file input changes to preview images
 document.querySelectorAll('input[type="file"]').forEach(input => {
   input.addEventListener('change', (event) => {
     previewImage(event, `preview${event.target.id.slice(-1)}`);
   });
 });
 
+// Add an event listener for the form submission
 document.getElementById('photoForm').addEventListener('submit', (event) => {
   event.preventDefault();
   // Add your form submission logic here
