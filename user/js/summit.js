@@ -25,8 +25,16 @@ document.addEventListener('DOMContentLoaded', function() {
     // Redirect the user to the specified URL
     window.location.href = redirectUrl;
 
-    window.alert("submit successful!")
-  
+    alert("Submit Successful")
+  });
+
+  // Add click event listeners to the "Take Photo" buttons
+  var takePhotoButtons = document.querySelectorAll('.custom-button');
+  takePhotoButtons.forEach(function(button) {
+    button.addEventListener('click', function(event) {
+      event.preventDefault(); // Prevent the default button click behavior
+      // Add your custom logic for handling the "Take Photo" button click here
+    });
   });
 });
 
