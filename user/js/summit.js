@@ -25,7 +25,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // Redirect the user to the specified URL
     window.location.href = redirectUrl;
 
-    alert("submit successful!")
+    window.alert("submit successful!")
+  
   });
 });
 
