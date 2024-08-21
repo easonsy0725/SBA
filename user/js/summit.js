@@ -21,7 +21,13 @@ document.addEventListener('DOMContentLoaded', function() {
     var redirectUrl = this.getAttribute('data-redirect-url');
 
     // Perform any desired form processing or validation here
-
+    if (navigator.userAgent.match(/mobile/i)) {
+      // For mobile devices, use the 'location.replace()' method to replace the current page in the browser history
+      location.replace(redirectUrl);
+    } else {
+      // For desktop, use the 'window.location.href' method to redirect the user
+      window.location.href = redirectUrl;
+    }
     // Redirect the user to the specified URL
     window.location.href = redirectUrl;
 
