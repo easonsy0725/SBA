@@ -4,36 +4,37 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Summit</title>
-    <link rel="icon" type="image/x-icon" href="../../image/icon.ico">
+    <link rel="icon" type="image/x-icon" href="../../../image/icon.ico">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="../css/summit.css">
+    <link rel="stylesheet" href="../../css/submit.css">
+    <script src="../../js/submit.js"></script>
   </head>
   <body>
     <div class="user-menu">
       <div class="logo">
-        <a href="../userPage.html">
-          <img src="../../image/logo.png" alt="Web Logo">
+        <a href="../../userPage.html">
+          <img src="../../../image/logo.png" alt="Web Logo">
         </a>
       </div> 
       <ul class="menu-items">
-        <li><a href="schedule.html">Schedule</a></li>
-        <li><a href="room.html">Room</a></li>
+        <li><a href="../schedule/day5.html">Schedule</a></li>
+        <li><a href="../room.html">Room</a></li>
       </ul>
     </div>
 
     <div class="dateSelecter">
-      <button onclick="loadSchedule('summit.html')">11</button>
-      <button onclick="loadSchedule('summit/day2Summit.html')">12</button>
-      <button onclick="loadSchedule('summit/day3Summit.html')">13</button>
-      <button onclick="loadSchedule('summit/day4Summit.html')">14</button>
-      <button onclick="loadSchedule('summit/day5Summit.html')">15</button>
+      <button onclick="loadSchedule('../submit.html')">11</button>
+      <button onclick="loadSchedule('day2Submit.html')">12</button>
+      <button onclick="loadSchedule('day3Submit.html')">13</button>
+      <button onclick="loadSchedule('day4Submit.html')">14</button>
+      <button onclick="loadSchedule('day5Submit.html')">15</button>
     </div>
 
     <div class="summit-form">
       <div class="card">
-        <span class="title">Day 1</span>
-        <form class="form" id="summit-form" data-redirect-url="schedule.html" enctype="multipart/form-data">
+        <span class="title">Day 5</span>
+        <form class="form" id="summit-form" data-redirect-url="../schedule/day5.html" enctype="multipart/form-data">
           <div class="group">
             <input type="file" id="fileInput1" name="image1" accept="image/*" capture="camera">
             <button class="custom-button" onclick="openFileInput('fileInput1');">Take Photo For Journey 1</button>
@@ -63,6 +64,6 @@
       </div>
     </div>
 
-    <script src="../js/summit.js"></script>
+    <script src="../../js/submit.js" async defer></script>
   </body>
 </html>
