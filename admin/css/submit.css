@@ -1,3 +1,7 @@
+*{
+  font-family: "微軟正黑體", "Microsoft JhengHei",  Tahoma , Verdana , Arial , sans-serif;
+}
+
 .admin-menu {
   background-color: #333;
   color: #fff;
@@ -226,26 +230,25 @@ h2 {
   }
 
   .submit-container {
-    display: flex;
-    justify-content: center;
+    flex-direction: column;
+  }
+  
+  .submittedBox,
+  .missingBox {
+    max-width: 100%;
+    width: auto;
+  }
+  
+  .studentMissing,
+  .studentSubmission{
+    margin-right: 40px;
+    margin-bottom: 20px;
+  }
+  
+  .studentMissing button,
+  .studentSubmission button{
+    padding: 8px 12px;
+    font-size: 15px;
     margin-top: 10px;
-    margin-bottom: 10px;
-  }
-
-  .submit-button {
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    padding: 8px 16px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 14px;
-    cursor: pointer;
-    border-radius: 5px;
-  }
-
-  .submit-button:hover {
-    background-color: #45a049;
   }
 }
