@@ -38,7 +38,25 @@
     </div>
 
     <h1>Day 2</h1>
-
+    <div class="submit-container">
+      <div class="submittedBox" id="box1">
+          <h2>Submitted</h2>
+          <ul class="studentSubmission" style="list-style-type:none;">
+              <li><button onclick="loadSchedule('../student/student2/day2.html')">Student 2</button></li>
+              <li><button onclick="loadSchedule('../student/student4/day2.html')">Student 4</button></li>
+              <li><button onclick="loadSchedule('../student/student6/day2.html')">Student 6</button></li>
+          </ul>
+      </div>
+      <div class="missingBox" id="box2">
+          <h2>Missing</h2>
+          <ul class="studentMissing" style="list-style-type:none;">
+              <li><button onclick="sendWhatsAppMessage('+85251915520', 'Yo nigga submit your work !!!')">Student 1</button></li>
+              <li><button onclick="sendWhatsAppMessage('+85251915520', 'Yo nigga submit your work !!!')">Student 3</button></li>
+              <li><button onclick="sendWhatsAppMessage('+85251915520', 'Yo nigga submit your work !!!')">Student 5</button></li>
+          </ul>
+      </div>
+    </div>
+    
     <script src="../../js/submit.js" async defer></script>
   </body>
 </html>

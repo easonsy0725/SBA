@@ -77,29 +77,65 @@
   background-color: #4CAF50;
   color: white;
 }
+h1 {
+  margin-top: 40px;
+  text-align: center;
+  font-size: 36px;
+}
+
+h2 {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 24px;
+}
 
 .submit-container {
   display: flex;
-  justify-content: center;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  gap: 20px;
 }
 
-.submit-button {
-  background-color: #4CAF50;
+.submittedBox,
+.missingBox {
+  border: 1px solid #ccc;
+  border-radius: 15px;
+  padding: 20px;
+  width: 100%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.submittedBox{
+  background: rgba(0, 255, 0 , 0.7);
+}
+
+.missingBox{
+  background: rgba(255, 0, 0 , 0.7);
+}
+
+.studentMissing,
+.studentSubmission{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 40px;
+}
+
+.studentMissing button,
+.studentSubmission button{
+  background-color: rgba(128, 128, 128, 0.775);
   color: white;
   border: none;
-  padding: 10px 20px;
+  padding: 8px 16px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 16px;
+  font-size: 14px;
   cursor: pointer;
   border-radius: 5px;
 }
 
-.submit-button:hover {
-  background-color: #45a049;
+.studentMissing button:hover,
+.studentSubmission button:hover{
+  background-color: rgba(128, 128, 128, 0.9);
 }
 
 @media (max-width: 767px) {
