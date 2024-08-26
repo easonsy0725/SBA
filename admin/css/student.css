@@ -1,3 +1,7 @@
+*{
+    font-family: "微軟正黑體", "Microsoft JhengHei",  Tahoma , Verdana , Arial , sans-serif;
+}  
+
 .admin-menu {
     background-color: #333;
     color: #fff;
@@ -57,7 +61,7 @@ h1 {
 @media (max-width: 767px) {
     .admin-menu {
         background-color: #333;
-        color: #fff;
+        color: #fff; 
         padding: 10px;
         display: flex;
     }
