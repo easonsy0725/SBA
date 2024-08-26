@@ -104,7 +104,7 @@ h2 {
   border: 1px solid #ccc;
   border-radius: 15px;
   padding: 20px;
-  width: 100%;
+  width: calc(50% - 50px); /* Side by side on larger screens */
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -118,10 +118,13 @@ h2 {
 
 .studentMissing,
 .studentSubmission{
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  padding-left: 52px;
+  list-style-type: none;
   justify-content: space-between;
   align-items: center;
-  margin-right: 40px;
 }
 
 .studentMissing button,
@@ -231,25 +234,26 @@ h2 {
   }
 
   .submit-container {
-    flex-direction: column;
+    flex-direction: row;
   }
   
   .submittedBox,
   .missingBox {
-    max-width: 100%;
-    width: auto;
+    margin-bottom: 20px;
   }
   
   .studentMissing,
   .studentSubmission{
-    margin-right: 40px;
-    margin-bottom: 20px;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0;
+    margin-right: 0;
+    margin-bottom: 10px;
   }
   
   .studentMissing button,
   .studentSubmission button{
-    padding: 8px 12px;
-    font-size: 15px;
-    margin-top: 10px;
+    padding: 6px 10px;
+    font-size: 14px;
+    margin-top: 5px;
   }
 }
