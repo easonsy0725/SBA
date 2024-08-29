@@ -1,35 +1,42 @@
 const form = document.getElementById('login-form');
-const messageElement = document.getElementById('message');
 
-form.addEventListener('submit', (event) => {
-  event.preventDefault(); // Prevent the default form submission
+document.getElementById('login-form').addEventListener('submit', function(event) {
+  event.preventDefault(); 
 
   const username = document.getElementById('username').value;
   const password = document.getElementById('password').value;
 
-  if (username === 'admin' && password === 'admin') {
-    messageElement.textContent = 'Login successful!';
-    messageElement.classList.remove('error');
-    messageElement.classList.add('success');
+  // Set a timeout to simulate loading for successful login
+  setTimeout(() => {
+    const successModal = document.getElementById('successModal');
+    const modalMessage = document.getElementById('modalMessage');
+    const modalButton = document.getElementById('modalButton');
 
-    // Redirect the admin user to the admin page
-    window.location.href = 'admin/adminPage.html';
-  } else if (username === 'user' && password === 'user') {
-    messageElement.textContent = 'Login successful!';
-    messageElement.classList.remove('error');
-    messageElement.classList.add('success');
+    if ((username === 'user' && password === 'user') || (username === 'admin' && password === 'admin')) {
+      document.getElementById('loading').style.display = 'flex'; // Show the loader for successful login
 
-    // Redirect the normal user to the user page
-    window.location.href = 'user/userPage.html';
-  } else {
-    messageElement.textContent = 'Login failed!';
-    messageElement.classList.remove('success');
-    messageElement.classList.add('error');
-
-    // Show the message for 2 seconds and then hide it
-    messageElement.style.display = 'block';
-    setTimeout(() => {
-      messageElement.style.display = 'none';
-    }, 2000);
-  }
+      if (username === 'user') {
+        modalMessage.textContent = 'Login successful - Redirecting to User Page';
+        modalButton.onclick = function() {
+          document.getElementById('loading').style.display = 'none'; // Hide the loader
+          window.location.href = 'user/userPage.html';
+        };
+      } else {
+        modalMessage.textContent = 'Login successful - Redirecting to Admin Page';
+        modalButton.onclick = function() {
+          document.getElementById('loading').style.display = 'none'; // Hide the loader
+          window.location.href = 'admin/adminPage.html';
+        };
+      }
+      successModal.style.display = 'flex'; // Show the modal
+    } else {
+      // For invalid login, show the error message without loader
+      document.getElementById('loading').style.display = 'none'; // Ensure loader is hidden
+      modalMessage.textContent = 'Invalid username or password. Please try again.';
+      modalButton.onclick = function() {
+        successModal.style.display = 'none'; // Hide the modal
+      };
+      successModal.style.display = 'flex'; // Show the modal
+    }
+  }, 100); // Delay to simulate loading
 });

@@ -14,17 +14,32 @@
     </head>
     <body>
         <div class="login-container">
-            <h2>Login</h2>
-            <form id="login-form">
-              <label for="username">Username:</label>
-              <input type="text" id="username" name="username" placeholder="Enter your username" required>
-          
-              <label for="password">Password:</label>
-              <input type="password" id="password" name="password" placeholder="Enter your password" required>
-          
-              <button type="submit">Login</button>
+            <form class="login-form" id="login-form" action="">
+              <p class="title">Login</p>
+              <div class="input-field">
+                <input required="" class="input" id="username" type="text" />
+                <label class="label" for="input">Enter Username</label>
+              </div>
+              <div class="input-field">
+                <input required="" class="input" id="password" type="password" />
+                <label class="label" for="input">Enter Password</label>
+              </div>
+              <a href="prank.html">Forgot your password?</a>
+              <button type="submit" class="submit">Login</button>
             </form>
             <div id="message" class="message"></div>
+
+            <div class="loader" id="loading">
+              <div class="loader-text">Loading...</div>
+              <div class="loader-bar"></div>
+            </div>            
+          </div>
+
+          <div id="successModal" class="modal">
+            <div class="modal-content">
+              <p id="modalMessage"></p>
+              <button id="modalButton">Continue</button>
+            </div>
           </div>
         
         <script src="js/script.js" async defer></script>

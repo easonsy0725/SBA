@@ -1,0 +1,14 @@
+body {
+  display: flex;
+  font-family: "微軟正黑體", "Microsoft JhengHei", Tahoma, Verdana, Arial, sans-serif;
+  justify-content: center; /* Centers horizontally */
+  align-items: center;    /* Centers vertically */
+  height: 100vh;         /* Full height of the viewport */
+  margin: 0;             /* Remove default margin */
+  background-color: #f0f0f0; /* Optional background color */
+  background-image: url('../image/Trollface.png'); /* Optional background image */
+}
+h1 {
+  text-align: center;     /* Center the text */
+  margin: 0;             /* Remove default margin */
+}
