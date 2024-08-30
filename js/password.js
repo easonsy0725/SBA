@@ -6,7 +6,7 @@ document.getElementById('resetForm').addEventListener('submit', function(event) 
   const messageDiv = document.getElementById('message'); // Get the message div element
   const passwordDiv = document.getElementById('password'); // Get the password div element
 
-  // Basic email validation
+  // email validation
   if (!validateEmail(email)) {
       messageDiv.textContent = "Please enter a valid email address."; // Show error message
       messageDiv.style.color = "red"; // Set message color to red
@@ -15,12 +15,12 @@ document.getElementById('resetForm').addEventListener('submit', function(event) 
       return; // Exit the function
   }
 
-  // Simulate checking the email (hardcoded example)
+  // checking the email (hardcode)
   if (email === "easonsy0725@gmail.com" || email === "s190072@cloud.sja.edu.hk") {
       messageDiv.textContent = "Email is valid!"; // Show success message
       messageDiv.style.color = "green"; // Set message color to green
 
-      // Display the corresponding password based on the email
+      // Display the correct password based on the email
       if (email === "s190072@cloud.sja.edu.hk") {
           passwordDiv.textContent = "Your password is: 'user'";
       } else {
@@ -30,7 +30,7 @@ document.getElementById('resetForm').addEventListener('submit', function(event) 
 
       // Hide the password after 3 seconds
       setTimeout(() => {
-          passwordDiv.style.display = "none"; // Hide password div
+          passwordDiv.style.display = "none";
       }, 3000);
   } else {
       messageDiv.textContent = "Email not found."; // Show error message
