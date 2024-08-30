@@ -12,7 +12,7 @@ document.getElementById('login-form').addEventListener('submit', function(event)
     const modalMessage = document.getElementById('modalMessage');
     const modalButton = document.getElementById('modalButton');
 
-    if ((username === 'user' && password === 'user') || (username === 'admin' && password === 'admin')) {
+    if ((username === 'user' && password === 'user123') || (username === 'admin' && password === 'admin')) {
       document.getElementById('loading').style.display = 'flex'; // Show the loader for successful login
 
       if (username === 'user') {
