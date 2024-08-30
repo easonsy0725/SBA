@@ -22,7 +22,7 @@ document.getElementById('resetForm').addEventListener('submit', function(event) 
 
       // Display the correct password based on the email
       if (email === "s190072@cloud.sja.edu.hk") {
-          passwordDiv.textContent = "Your password is: 'user'";
+          passwordDiv.textContent = "Your password is: 'user123'";
       } else {
           passwordDiv.textContent = "Your password is: 'admin'";
       }
