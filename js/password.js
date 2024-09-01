@@ -1,7 +1,8 @@
 // Add event listener to the reset form submission
-document.getElementById('resetForm').addEventListener('submit', function(event) {
+document.getElementById('password-form').addEventListener('submit', function(event) {
   event.preventDefault(); // Prevent the default form submission behavior
 
+  const username = document.getElementById('username').value; // Get the username input value
   const email = document.getElementById('email').value; // Get the email input value
   const messageDiv = document.getElementById('message'); // Get the message div element
   const passwordDiv = document.getElementById('password'); // Get the password div element
@@ -16,7 +17,7 @@ document.getElementById('resetForm').addEventListener('submit', function(event) 
   }
 
   // checking the email (hardcode)
-  if (email === "easonsy0725@gmail.com" || email === "s190072@cloud.sja.edu.hk") {
+  if (username === "admin" && email === "easonsy0725@gmail.com" || username === "user" && email === "s190072@cloud.sja.edu.hk") {
       messageDiv.textContent = "Email is valid!"; // Show success message
       messageDiv.style.color = "green"; // Set message color to green
 
@@ -33,7 +34,7 @@ document.getElementById('resetForm').addEventListener('submit', function(event) 
           passwordDiv.style.display = "none";
       }, 3000);
   } else {
-      messageDiv.textContent = "Email not found."; // Show error message
+      messageDiv.textContent = "Username or Email not found."; // Show error message
       messageDiv.style.color = "red"; // Set message color to red
       passwordDiv.textContent = ""; // Clear password text
       passwordDiv.style.display = "none"; // Hide password div
