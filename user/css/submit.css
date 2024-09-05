@@ -288,8 +288,8 @@ input[type="file"] {
   border-color: #3366cc; /* Keep blue focus border */
 }
 
-.form .group input:focus + label,
-.form .group textarea:focus + label {
+.dark-mode .form .group input:focus + label,
+.dark-mode .form .group textarea:focus + label {
   background-color: #1e1e1e;
 }
 
