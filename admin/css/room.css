@@ -72,7 +72,7 @@
 .roomNum{
     display: inline-block;
     width: 120px;
-    height: 30px;
+    height: 60px;
     line-height: 30px;
     text-align: center;
     padding: 5px 10px;
@@ -109,6 +109,26 @@
 .gender-empty {
     background-color: lightgray;
     color: black;
+}
+
+.dark-mode .roomNum {
+    background-color: #AE6F2D; /* Keep room number color */
+    color: white; /* White text */
+}
+
+.dark-mode .gender-male {
+    background-color: #1e90ff; /* Lighter blue for male */
+    color: white; /* White text */
+}
+
+.dark-mode .gender-female {
+    background-color: #ff69b4; /* Lighter pink for female */
+    color: white; /* White text */
+}
+
+.dark-mode .gender-empty {
+    background-color: #555; /* Darker gray for empty */
+    color: white; /* White text */
 }
 
 @media (max-width: 767px) {

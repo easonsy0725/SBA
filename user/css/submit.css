@@ -248,6 +248,63 @@ input[type="file"] {
   font-size: 12px;
 }
 
+.dark-mode .dateSelecter button {
+  background-color: #333; /* Dark background for date buttons */
+  color: #ffffff; /* White text */
+}
+
+.dark-mode .dateSelecter button:hover {
+  background-color: #444; /* Darker hover effect */
+}
+
+.dark-mode .dateSelecter button.active {
+  background-color: #4CAF50; /* Active button remains green */
+  color: white;
+}
+
+.dark-mode .submit-button {
+  background-color: #4CAF50; /* Keep submit button color */
+  color: white; /* White text */
+}
+
+.dark-mode .submit-button:hover {
+  background-color: #45a049; /* Slightly darker green on hover */
+}
+
+.dark-mode .card {
+  background-color: #121212; /* Match the website's dark background */
+  border: none; /* Dark border */
+}
+
+.dark-mode .form .group input,
+.dark-mode .form .group textarea {
+  background-color: #1e1e1e; /* Dark background for inputs */
+  color: #ffffff; /* Light text */
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Light border */
+}
+
+.dark-mode .form .group input:focus,
+.dark-mode .form .group textarea:focus {
+  border-color: #3366cc; /* Keep blue focus border */
+}
+
+.form .group input:focus + label,
+.form .group textarea:focus + label {
+  background-color: #1e1e1e;
+}
+
+.dark-mode .form button {
+  background-color: #3366cc; /* Blue background for buttons */
+  color: #fff; /* White text */
+}
+
+.dark-mode .form button:hover {
+  background-color: #27408b; /* Darker blue on hover */
+}
+
+.dark-mode .preview img {
+  border: 1px solid #444; /* Darker border for preview images */
+}
 
 @media (max-width: 767px) {
   .user-menu {

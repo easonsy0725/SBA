@@ -120,11 +120,12 @@ h2 {
 .studentSubmission{
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
+  gap: 20px;
   padding-left: 52px;
   list-style-type: none;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
+  margin-right: 50px;
 }
 
 .studentMissing button,
@@ -144,6 +145,40 @@ h2 {
 .studentMissing button:hover,
 .studentSubmission button:hover{
   background-color: rgba(128, 128, 128, 0.9);
+}
+
+.dark-mode .dateSelecter button {
+  background-color: #333; /* Dark background for date buttons */
+  color: #ffffff; /* Light text */
+}
+
+.dark-mode .dateSelecter button:hover {
+  background-color: #555; /* Darker hover effect */
+}
+
+.dark-mode h1, .dark-mode h2 {
+  color: #ffffff; /* Light text for headings */
+}
+
+.dark-mode .submittedBox {
+  background: rgba(0, 255, 0, 0.5); /* Slightly darker green for submitted box */
+  border: none;
+}
+
+.dark-mode .missingBox {
+  background: rgba(255, 0, 0, 0.5); /* Slightly darker red for missing box */
+  border: none;
+}
+
+.dark-mode .studentMissing button,
+.dark-mode .studentSubmission button {
+  background-color: rgba(128, 128, 128, 0.775); /* Keep button color */
+  color: white; /* White text */
+}
+
+.dark-mode .studentMissing button:hover,
+.dark-mode .studentSubmission button:hover {
+  background-color: rgba(128, 128, 128, 0.9); /* Darker hover effect */
 }
 
 @media (max-width: 767px) {

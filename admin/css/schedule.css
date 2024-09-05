@@ -161,6 +161,34 @@ p {
   background-color: #45a049;
 }
 
+.dark-mode .schedule-item {
+  border: 1px solid #444; /* Darker border for schedule items */
+  background-color: #1e1e1e; /* Dark background for schedule items */
+}
+
+.dark-mode .schedule-item h3,
+.dark-mode .schedule-item p {
+  color: #ffffff; /* Light text for schedule item headings and paragraphs */
+}
+
+.dark-mode .dateSelecter button {
+  background-color: #333; /* Dark background for date buttons */
+  color: #ffffff; /* Light text */
+}
+
+.dark-mode .dateSelecter button:hover {
+  background-color: #555; /* Darker hover effect */
+}
+
+.dark-mode .submit-button {
+  background-color: #4CAF50; /* Keep submit button color */
+  color: white; /* White text */
+}
+
+.dark-mode .submit-button:hover {
+  background-color: #45a049; /* Slightly darker green on hover */
+}
+
 @media (max-width: 767px) {
   .admin-menu {
     background-color: #333;

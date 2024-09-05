@@ -58,6 +58,10 @@ h1 {
     font-size: 36px;
 }
 
+.dark-mode h1 {
+    color: #ffffff; /* Light text for headings */
+}
+
 @media (max-width: 767px) {
     .admin-menu {
         background-color: #333;

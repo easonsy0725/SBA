@@ -111,6 +111,23 @@
     font-weight: bold;
 }
 
+.dark-mode .data-section {
+    background-color: #1e1e1e; /* Dark background for data section */
+    color: #ffffff; /* Light text color in data section */
+  }
+  
+  .dark-mode #weather-description {
+    color: #ffffff; /* Light color for weather description */
+  }
+  
+  .dark-mode .weather-metric {
+    color: #dddddd; /* Lighter color for weather metrics */
+  }
+  
+  .dark-mode .weather-metric i {
+    color: rgb(0, 119, 255); /* Keep icon color consistent */
+  }
+  
 @media (max-width: 480px){
     .user-menu {
         background-color: #333;

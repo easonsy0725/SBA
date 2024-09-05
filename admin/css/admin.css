@@ -111,6 +111,28 @@
     font-weight: bold;
 }
 
+.dark-mode .weather-section {
+    background-color: #1e1e1e; /* Dark background for weather section */
+    color: #ffffff; /* Light text */
+    box-shadow: 0 6px 12px rgba(255, 255, 255, 0.1); /* Light shadow for contrast */
+}
+
+.dark-mode .weather-details {
+    color: #ffffff; /* Light text for weather details */
+}
+
+.dark-mode #weather-description {
+    color: #ffffff; /* Light text for weather description */
+}
+
+.dark-mode .weather-metric {
+    color: #aaaaaa; /* Lighter text for metrics */
+}
+
+.dark-mode .weather-metric i {
+    color: rgb(0, 119, 255); /* Keep icon color */
+}
+
 @media (max-width: 767px) {
     .admin-menu {
         background-color: #333;
