@@ -58,6 +58,11 @@ h1 {
     font-size: 36px;
 }
 
+.card {
+    cursor: pointer; /* Indicate that the card is clickable */
+}
+
+
 section.card {
     position: relative;
     width: 300px; /* Adjusted width for a larger card */
@@ -115,6 +120,10 @@ section.card {
 
 .card:hover svg {
     scale: 0;
+}
+
+.card.active .card__content {
+    transform: rotateX(0deg); /* Show card content when active */
 }
 
 .card__description {
