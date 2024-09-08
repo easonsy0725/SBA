@@ -1,3 +1,27 @@
+//                     _____
+//                    |     |
+//                    |     |
+//                    |     |
+//    ________________|     |________________
+//   |                                       |
+//   |________________       ________________|
+//                    |      |
+//                    |      |
+//                    |      |
+//                    |      |
+//                    |      |
+//                    |      |
+//                    |      |
+//                    |      |
+//                    |      |
+//                    |      |
+//                    |      |
+//                    |      |
+//                    |______|
+
+//                耶穌保佑† 唔好有BUG!!!
+
+
 // Add event listener to the reset form submission
 document.getElementById('password-form').addEventListener('submit', function(event) {
   event.preventDefault(); // Prevent the default form submission behavior

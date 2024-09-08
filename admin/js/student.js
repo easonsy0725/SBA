@@ -1,3 +1,27 @@
+//                     _____
+//                    |     |
+//                    |     |
+//                    |     |
+//    ________________|     |________________
+//   |                                       |
+//   |________________       ________________|
+//                    |      |
+//                    |      |
+//                    |      |
+//                    |      |
+//                    |      |
+//                    |      |
+//                    |      |
+//                    |      |
+//                    |      |
+//                    |      |
+//                    |      |
+//                    |      |
+//                    |______|
+
+//                耶穌保佑† 唔好有BUG!!!
+
+
 document.querySelectorAll('.card').forEach(card => {
   card.addEventListener('click', (event) => {
       // Prevent event from bubbling up to the document

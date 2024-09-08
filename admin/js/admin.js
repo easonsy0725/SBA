@@ -1,3 +1,27 @@
+//                     _____
+//                    |     |
+//                    |     |
+//                    |     |
+//    ________________|     |________________
+//   |                                       |
+//   |________________       ________________|
+//                    |      |
+//                    |      |
+//                    |      |
+//                    |      |
+//                    |      |
+//                    |      |
+//                    |      |
+//                    |      |
+//                    |      |
+//                    |      |
+//                    |      |
+//                    |      |
+//                    |______|
+
+//                耶穌保佑† 唔好有BUG!!!
+
+
 const fetchWeatherData = async () => {
     try {
         const response = await fetch('https://api.openweathermap.org/data/2.5/weather?q=Tokyo&appid=9c6c88bdf27df268e8e0bb5787a30e70&units=metric');
