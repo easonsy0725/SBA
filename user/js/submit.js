@@ -106,7 +106,6 @@ document.querySelectorAll('input[type="file"]').forEach(input => {
 // Add an event listener for the form submission
 document.getElementById('photoForm').addEventListener('submit', (event) => {
   event.preventDefault();
-  // Add your form submission logic here
   console.log('Form submitted');
 });
 
