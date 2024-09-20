@@ -184,6 +184,17 @@
   border-radius: 5px; /* Optional: add some border radius for better appearance */
 }
 
+.announcement {
+  background-color: #fff3f3;
+  color: red;
+  padding: 10px;
+  border: 1px solid red;
+  border-radius: 5px;
+  margin: 10px 0;
+  text-align: center;
+  font-weight: bold;
+}
+
 @media (max-width: 480px) {
   .user-menu {
     background-color: #333;
