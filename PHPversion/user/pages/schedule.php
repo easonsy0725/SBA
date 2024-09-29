@@ -19,7 +19,7 @@
         </a>
       </div> 
       <ul class="menu-items">
-        <li><a href="schedule.html">Schedule</a></li>
+        <li><a href="schedule.php">Schedule</a></li>
         <li><a href="room.html">Room</a></li>
         <li><a href="chat.html">Chat</a></li>
       </ul>
