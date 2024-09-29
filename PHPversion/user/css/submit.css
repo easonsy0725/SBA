@@ -1,0 +1,461 @@
+*{
+  font-family: "微軟正黑體", "Microsoft JhengHei",  Tahoma , Verdana , Arial , sans-serif;
+} 
+
+.user-menu {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.user-menu .logo {
+  margin-left: 20px;
+}
+
+.user-menu .logo a {
+  color: #fff;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+.user-menu .logo img {
+  max-height: 65px;
+  margin-right: 10px;
+}
+
+.user-menu .menu-items {
+  display: flex;
+  margin-right: 20px;
+}
+
+.user-menu .menu-items li {
+  list-style-type: none;
+  margin: 0 10px;
+}
+
+.user-menu .menu-items a {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+.user-menu .menu-items a:hover {
+  background-color: #555;
+}
+
+.dateSelecter {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.dateSelecter button {
+  background-color: #f1f1f1;
+  border: none;
+  color: #333;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.dateSelecter button:hover {
+  background-color: #ddd;
+}
+
+.dateSelecter button.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.submit-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.submit-button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.submit-button:hover {
+  background-color: #45a049;
+}
+
+.summit-form{
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  height: 100vh; /* Adjust the height as needed */
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.form {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.group {
+  position: relative;
+}
+
+.form .group label {
+  font-size: 14px;
+  color: rgb(99, 102, 102);
+  position: absolute;
+  top: -10px;
+  left: 10px;
+  background-color: transparent;
+  transition: all .3s ease;
+}
+
+.form .group input:placeholder-shown + label,
+.form .group textarea:placeholder-shown + label {
+  top: 10px;
+  background-color: transparent;
+}
+
+.form .group input:focus + label,
+.form .group textarea:focus + label {
+  top: -10px;
+  left: 10px;
+  background-color: #fff;
+  color: #3366cc;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.form .group input,
+.form .group textarea {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  margin-bottom: 20px;
+  outline: 0;
+  width: 100%;
+  background-color: transparent;
+}
+
+.form .group input:focus,
+.form .group textarea:focus {
+  border-color: #3366cc;
+}
+
+.form .group textarea {
+  resize: none;
+  height: 100px;
+}
+
+.form button {
+  background-color: #3366cc;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.form button:hover {
+  background-color: #27408b;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+/* Style the custom button */
+.custom-button {
+  background-color: #4CAF50; /* Green background */
+  border: none; /* Remove borders */
+  color: white; /* White text */
+  padding: 15px 32px; /* Some padding */
+  text-align: center; /* Centered text */
+  text-decoration: none; /* Remove underline */
+  display: inline-block; /* Make the button inline */
+  font-size: 16px; /* Increase font size */
+  margin: 4px 2px; /* Some margin */
+  margin-bottom: 10px;
+  cursor: pointer; /* Pointer/hand icon */
+  border-radius: 12px; /* Rounded corners */
+}
+
+.custom-button:hover {
+  background-color: #45a049; /* Darker green on hover */
+}
+
+.preview {
+  position: relative;
+  display: inline-block;
+  max-width: 300px;
+  margin: 1rem 0;
+}
+.preview img {
+  max-width: 50%;
+  height: auto;
+  border: 1px solid #ccc;
+  padding: 5px;
+}
+.preview .delete-btn {
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.dark-mode .dateSelecter button {
+  background-color: #333; /* Dark background for date buttons */
+  color: #ffffff; /* White text */
+}
+
+.dark-mode .dateSelecter button:hover {
+  background-color: #444; /* Darker hover effect */
+}
+
+.dark-mode .dateSelecter button.active {
+  background-color: #4CAF50; /* Active button remains green */
+  color: white;
+}
+
+.dark-mode .submit-button {
+  background-color: #4CAF50; /* Keep submit button color */
+  color: white; /* White text */
+}
+
+.dark-mode .submit-button:hover {
+  background-color: #45a049; /* Slightly darker green on hover */
+}
+
+.dark-mode .card {
+  background-color: #121212; /* Match the website's dark background */
+  border: none; /* Dark border */
+}
+
+.dark-mode .form .group input,
+.dark-mode .form .group textarea {
+  background-color: #1e1e1e; /* Dark background for inputs */
+  color: #ffffff; /* Light text */
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Light border */
+}
+
+.dark-mode .form .group input:focus,
+.dark-mode .form .group textarea:focus {
+  border-color: #3366cc; /* Keep blue focus border */
+}
+
+.dark-mode .form .group input:focus + label,
+.dark-mode .form .group textarea:focus + label {
+  background-color: #1e1e1e;
+}
+
+.dark-mode .form button {
+  background-color: #3366cc; /* Blue background for buttons */
+  color: #fff; /* White text */
+}
+
+.dark-mode .form button:hover {
+  background-color: #27408b; /* Darker blue on hover */
+}
+
+.dark-mode .preview img {
+  border: 1px solid #444; /* Darker border for preview images */
+}
+
+@media (max-width: 767px) {
+  .user-menu {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    display: flex;
+  }
+
+  .user-menu .logo {
+    margin-bottom: 10px;
+  }
+
+  .user-menu .logo a {
+    color: #fff;
+    text-decoration: none;
+    display: flex;
+  }
+
+  .user-menu .logo img {
+    max-height: 50px;
+    margin-right: 5px;
+  }
+
+  .user-menu .menu-items {
+    display: flex;
+    align-items: center;
+    margin-right: 0;
+  }
+
+  .user-menu .menu-items li {
+    list-style-type: none;
+    margin: 5px 0;
+  }
+
+  .user-menu .menu-items a {
+    color: #fff;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+
+  .user-menu .menu-items a:hover {
+    background-color: #555;
+  }
+
+  h1 {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 24px;
+  }
+
+  p {
+    margin: 10px;
+    font-size: 14px;
+  }
+
+  .dateSelecter {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+  }
+
+  .dateSelecter button {
+    background-color: #f1f1f1;
+    border: none;
+    color: #333;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 2px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+
+  .dateSelecter button:hover {
+    background-color: #ddd;
+  }
+
+  .dateSelecter button.active {
+    background-color: #4CAF50;
+    color: white;
+  }
+
+  .submit-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .submit-button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+
+  .submit-button:hover {
+    background-color: #45a049;
+  }
+
+  .form .group label {
+    font-size: 14px;
+    color: rgb(99, 102, 102);
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: transparent;
+    transition: none;
+  }
+
+  .form .group input:placeholder-shown + label,
+  .form .group textarea:placeholder-shown + label {
+    top: -20px;
+    background-color: transparent;
+  }
+
+  .form .group input:focus + label,
+  .form .group textarea:focus + label {
+    top: -20px;
+    left: 10px;
+    background-color: #fff;
+    color: #3366cc;
+    font-weight: 600;
+    font-size: 14px;
+  }
+
+  .custom-button {
+    background-color: #4CAF50; /* Green background */
+    border: none; /* Remove borders */
+    color: white; /* White text */
+    padding: 15px 32px; /* Some padding */
+    text-align: center; /* Centered text */
+    text-decoration: none; /* Remove underline */
+    display: inline-block; /* Make the button inline */
+    font-size: 16px; /* Increase font size */
+    margin: 4px 2px; /* Some margin */
+    margin-bottom: 20px;
+    cursor: pointer; /* Pointer/hand icon */
+    border-radius: 12px; /* Rounded corners */
+  }
+
+}

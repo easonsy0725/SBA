@@ -1,0 +1,202 @@
+*{
+    font-family: "微軟正黑體", "Microsoft JhengHei",  Tahoma , Verdana , Arial , sans-serif;
+} 
+
+.admin-menu {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.admin-menu .logo {
+    margin-left: 20px;
+}
+
+.admin-menu .logo a {
+    color: #fff;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.admin-menu .logo img {
+    max-height: 65px; /* Increased the max height of the logo */
+    margin-right: 10px;
+}
+
+.admin-menu .menu-items {
+    display: flex;
+}
+
+.admin-menu .menu-items li {
+    list-style-type: none;
+    margin: 0 10px;
+}
+
+.admin-menu .menu-items a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.admin-menu .menu-items a:hover {
+    background-color: #555;
+}
+
+.admin-menu .menu-items li a img {
+    max-height: 25px; /* Set the max height of the settings icon */
+    vertical-align: middle; /* Align the image vertically with the text */
+}
+
+.rooms {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.room {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.room > * {
+    margin: 0 10px;
+}
+
+.roomNum{
+    display: inline-block;
+    width: 120px;
+    height: 60px;
+    line-height: 30px;
+    text-align: center;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.student-box,
+.teacher-box,
+.empty-box {
+    display: inline-block;
+    width: 100px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.roomNum{
+    background-color: #AE6F2D;
+    color: white;
+}
+
+.gender-male {
+    background-color: blue;
+    color: white;
+}
+
+.gender-female {
+    background-color: deeppink;
+    color: white;
+}
+
+.gender-empty {
+    background-color: lightgray;
+    color: black;
+}
+
+.dark-mode .roomNum {
+    background-color: #AE6F2D; /* Keep room number color */
+    color: white; /* White text */
+}
+
+.dark-mode .gender-male {
+    background-color: #1e90ff; /* Lighter blue for male */
+    color: white; /* White text */
+}
+
+.dark-mode .gender-female {
+    background-color: #ff69b4; /* Lighter pink for female */
+    color: white; /* White text */
+}
+
+.dark-mode .gender-empty {
+    background-color: #555; /* Darker gray for empty */
+    color: white; /* White text */
+}
+
+@media (max-width: 767px) {
+    .admin-menu {
+        background-color: #333;
+        color: #fff;
+        padding: 10px;
+        display: flex;
+    }
+
+    .admin-menu .logo {
+        margin-bottom: 10px;
+    }
+
+    .admin-menu .logo a {
+        color: #fff;
+        text-decoration: none;
+        display: flex;
+    }
+
+    .admin-menu .logo img {
+        max-height: 50px;
+        margin-right: 5px;
+    }
+
+    .admin-menu .menu-items {
+        display: flex;
+        align-items: center;
+        margin-right: 0;
+    }
+
+    .admin-menu .menu-items li {
+        list-style-type: none;
+        margin: 5px 0;
+    }
+
+    .admin-menu .menu-items a {
+        color: #fff;
+        text-decoration: none;
+        padding: 5px 10px;
+        border-radius: 5px;
+    }
+
+    .admin-menu .menu-items a:hover {
+        background-color: #555;
+    }
+
+    .roomNum{
+        display: inline-block;
+        width: 65px;
+        height: 30px;
+        line-height: 30px;
+        text-align: center;
+        padding: 5px 10px;
+        border-radius: 5px;
+        font-size: x-small;
+    }
+    
+    .student-box,
+    .teacher-box,
+    .empty-box {
+        display: inline-block;
+        width: 65px;
+        height: 30px;
+        line-height: 30px;
+        text-align: center;
+        padding: 5px 10px;
+        border-radius: 5px;
+        font-size: x-small;
+    }
+}

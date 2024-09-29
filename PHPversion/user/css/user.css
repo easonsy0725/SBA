@@ -1,0 +1,216 @@
+*{
+    font-family: "微軟正黑體", "Microsoft JhengHei",  Tahoma , Verdana , Arial , sans-serif;
+} 
+
+.user-menu { 
+    background-color: #333; 
+    color: #fff; 
+    padding: 10px 0; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+}
+
+.user-menu .logo {
+    margin-left: 20px;
+}
+
+.user-menu .logo a {
+    color: #fff;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.user-menu .logo img {
+    max-height: 65px; /* Increased the max height of the logo */
+    margin-right: 10px;
+}
+
+.user-menu .menu-items {
+    display: flex;
+}
+
+.user-menu .menu-items li {
+    list-style-type: none;
+    margin: 0 10px;
+}
+
+.user-menu .menu-items a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.user-menu .menu-items a:hover {
+    background-color: #555;
+}
+
+.user-menu .menu-items li a img {
+    max-height: 25px; /* Set the max height of the settings icon */
+    vertical-align: middle; /* Align the image vertically with the text */
+}
+
+.data-section {
+    background-color: #f0f8ff;
+    padding: 2.5rem;
+    border-radius: 16px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    text-align: center;
+}
+
+.weather-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.weather-icon {
+    font-size: 5rem;
+    margin-right: 2rem;
+    color: orange;
+}
+
+.weather-details {
+    text-align: left;
+}
+
+#weather-description {
+    text-align: left;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.weather-metrics {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1.5rem;
+}
+
+.weather-metric {
+    display: flex;
+    align-items: center;
+    font-size: 1.2rem;
+    color: #666;
+}
+
+.weather-metric i {
+    font-size: 1.5rem;
+    margin-right: 0.5rem;
+    color: rgb(0, 119, 255)
+}
+
+#weather-temperature,
+#weather-wind,
+#weather-humidity {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.dark-mode .data-section {
+    background-color: #1e1e1e; /* Dark background for data section */
+    color: #ffffff; /* Light text color in data section */
+  }
+  
+  .dark-mode #weather-description {
+    color: #ffffff; /* Light color for weather description */
+  }
+  
+  .dark-mode .weather-metric {
+    color: #dddddd; /* Lighter color for weather metrics */
+  }
+  
+  .dark-mode .weather-metric i {
+    color: rgb(0, 119, 255); /* Keep icon color consistent */
+  }
+  
+@media (max-width: 480px){
+    .user-menu {
+        background-color: #333;
+        color: #fff;
+        padding: 10px;
+        display: flex;
+    }
+    
+    .user-menu .logo {
+        margin-bottom: 10px;
+    }
+
+    .user-menu .logo a {
+        color: #fff;
+        text-decoration: none;
+        display: flex;
+    }
+
+    .user-menu .logo img {
+        max-height: 50px;
+        margin-right: 5px;
+    }
+
+    .user-menu .menu-items {
+        display: flex;
+        align-items: center;
+        margin-right: 0;
+    }
+
+    .user-menu .menu-items li {
+        list-style-type: none;
+        margin: 5px 0;
+    }
+
+    .user-menu .menu-items a {
+        color: #fff;
+        text-decoration: none;
+        padding: 5px 10px;
+        border-radius: 5px;
+    }
+
+    .user-menu .menu-items a:hover {
+        background-color: #555;
+    }
+
+    .weather-icon {
+        font-size: 4.5rem;
+        margin-right: 0rem;
+        color: orange;
+    }
+
+    #weather-description {
+        text-align: left;
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #333;
+        margin-bottom: 1rem;
+        margin-left: 2.5rem;
+    }
+
+    .weather-metrics {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 1.5rem;
+    }
+    
+    .weather-metric {
+        display: flex;
+        align-items: center;
+        font-size: 0.2rem;
+        color: #666;
+    }
+    
+    .weather-metric i {
+        font-size: 1rem;
+        margin-right: 1rem;
+        color: rgb(0, 119, 255)
+    }
+    
+    #weather-temperature,
+    #weather-wind,
+    #weather-humidity {
+        font-size: 1rem;
+        font-weight: bold;
+    }
+}
