@@ -26,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         if ($row['userRole'] == 'teacher') {
             header("Location: admin/adminPage.php");
         } else if ($row['userRole'] == 'student') {
-            header("Location: user/userPage.html");
+            header("Location: user/userPage.php");
         }
         exit();
     } else {

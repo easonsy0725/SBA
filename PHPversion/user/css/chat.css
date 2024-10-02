@@ -111,6 +111,20 @@
   margin-bottom: 5px;
 }
 
+.delete-button {
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.delete-button:hover {
+  background-color: #ff1a1a;
+}
+
 .dark-mode .chat-container {
   display: flex;
   flex-direction: column;
