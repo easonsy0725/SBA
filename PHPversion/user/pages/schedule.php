@@ -21,7 +21,7 @@
       <ul class="menu-items">
         <li><a href="schedule.php">Schedule</a></li>
         <li><a href="room.html">Room</a></li>
-        <li><a href="chat.html">Chat</a></li>
+        <li><a href="chat.php">Chat</a></li>
       </ul>
     </div>
 
@@ -59,35 +59,53 @@
         // Create connection
         $conn = new mysqli($servername, $username, $password, $dbname);
 
+        // Counter for display date or not
+        $counter = 0;
+
         // Check connection
         if ($conn->connect_error) {
           die("Connection failed: " . $conn->connect_error);
         }
 
-        $journeyIDs = [101, 102];
+        $journeyIDs = [101, 102]; // Journey IDs for the schedule
         foreach ($journeyIDs as $id) {
           $sql = "SELECT jName, jDescribe FROM journey WHERE journeyID = $id";
           $result = $conn->query($sql);
 
           if ($result->num_rows > 0) {
             while($row = $result->fetch_assoc()) {
-              echo '<div class="schedule-item">';
-              echo '<h3>Date: 2024-07-11</h3>';
-              echo '<p>Location: ' . $row["jName"] . '</p>';
-              echo '<p id="' . $id . '">Journey ' . ($id - 100) . ':</p>';
-              echo '<img src="../../image/attractions/' . ($id == 101 ? '101.jpg' : '102.jpg') . '" alt="' . $row["jName"] . '">';
-              echo '<ul>';
-              $details = explode(',', $row["jDescribe"]);
-              foreach ($details as $detail) {
-                echo '<li>' . $detail . '</li>';
-              }
-              echo '</ul>';
-              echo '<button onclick="openMap(\'' . $row["jName"] . '\')">View on Map</button>';
-              echo '</div>';
+              if ($counter < 1){
+                echo '<div class="schedule-item">';
+                echo '<h3>Date: 2024-07-11</h3>';//use counter to change date
+                echo '<p>Location: ' . $row["jName"] . '</p>';
+                echo '<p id="' . $id . '">Journey ' . ($id - 100) . ':</p>';
+                echo '<img src="../../image/attractions/' . ($id == 101 ? '101.jpg' : '102.jpg') . '" alt="' . $row["jName"] . '">';
+                echo '<ul>';
+                $details = explode(',', $row["jDescribe"]);
+                foreach ($details as $detail) {
+                  echo '<li>' . $detail . '</li>';
+                }
+                echo '</ul>';
+                echo '<button onclick="openMap(\'' . $row["jName"] . '\')">View on Map</button>';
+                echo '</div>';
+                $counter = $counter + 1;
+              }else{
+                echo '<div class="schedule-item">';
+                echo '<p>Location: ' . $row["jName"] . '</p>';
+                echo '<p id="' . $id . '">Journey ' . ($id - 100) . ':</p>';
+                echo '<img src="../../image/attractions/' . ($id == 101 ? '101.jpg' : '102.jpg') . '" alt="' . $row["jName"] . '">';
+                echo '<ul>';
+                $details = explode(',', $row["jDescribe"]);
+                foreach ($details as $detail) {
+                  echo '<li>' . $detail . '</li>';
+                }
+                echo '</ul>';
+                echo '<button onclick="openMap(\'' . $row["jName"] . '\')">View on Map</button>';
+                echo '</div>';
+              } 
             }
           } else {
             echo '<div class="schedule-item">';
-            echo '<h3>Date: 2024-07-11</h3>';
             echo '<p>Location: Not Found</p>';
             echo '<p id="' . $id . '">Journey ' . ($id - 100) . ':</p>';
             echo '<img src="../../image/attractions/' . ($id == 101 ? '101.jpg' : '102.jpg') . '" alt="Not Found">';
