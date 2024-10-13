@@ -1,0 +1,102 @@
+* {
+  font-family: "微軟正黑體", "Microsoft JhengHei", Tahoma, Verdana, Arial, sans-serif;
+}
+
+.menu {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu .logo {
+  margin-left: 20px;
+}
+
+.menu .logo a {
+  color: #fff;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+.menu .logo img {
+  max-height: 65px;
+  margin-right: 10px;
+}
+
+.menu .menu-items {
+  display: flex;
+  margin-right: 20px;
+}
+
+.menu .menu-items li {
+  list-style-type: none;
+  margin: 0 10px;
+}
+
+.menu .menu-items a {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+.menu .menu-items a:hover {
+  background-color: #555;
+}
+
+.submissions-container {
+  margin: 20px;
+}
+
+.submissions-container h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+table, th, td {
+  border: 1px solid #ddd;
+}
+
+th, td {
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+img {
+  max-width: 100px;
+  height: auto;
+}
+
+.dark-mode .menu {
+  background-color: #222;
+}
+
+.dark-mode .menu .menu-items a:hover {
+  background-color: #444;
+}
+
+.dark-mode table, .dark-mode th, .dark-mode td {
+  border: 1px solid #444;
+}
+
+.dark-mode th {
+  background-color: #333;
+}
+
+.dark-mode td {
+  background-color: #222;
+}
