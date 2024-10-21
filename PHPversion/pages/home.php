@@ -13,7 +13,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Dashboard</title>
+    <title>Home</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -32,11 +32,17 @@
             </a>
         </div>
         <ul class="menu-items">
-            <?php if ($userRole == 'teacher'): ?>
+            <?php if ($userRole == 'teacher' or $userRole == 'admin'): ?>
                 <li><a href="schedule.php">Schedule</a></li>
                 <li><a href="room.php">Room</a></li>
-                <li><a href="submit.php">Submit</a></li>
+                <li><a href="submission.php">Submit</a></li>
                 <li><a href="chat.php">Chat</a></li>
+            <?php elseif ($userRole == 'test'): ?>
+                <li><a href="schedule.php">Schedule</a></li>
+                <li><a href="room.php">Room</a></li>
+                <li><a href="chat.php">Chat</a></li>
+                <li><a href="../test.php">test</a></li>
+                <li><a href="submit.php">Submit</a></li>
             <?php else: ?>
                 <li><a href="schedule.php">Schedule</a></li>
                 <li><a href="room.html">Room</a></li>

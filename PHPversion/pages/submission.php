@@ -1,9 +1,11 @@
 <?php
 session_start();
 if (!isset($_SESSION['userID'])) {
-    header("Location: index.php");
+    header("Location: ../index.php");
     exit();
 }
+
+$userRole = $_SESSION['userRole'];
 
 $servername = "localhost";
 $username = "root";
@@ -18,29 +20,59 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
+$day = isset($_GET['day']) ? intval($_GET['day']) : 1;
+
+$journeys = [
+    1 => ['101', '102'],
+    2 => ['201', '202'],
+    3 => ['301', '302'],
+    4 => ['401', '402', '403'],
+    5 => ['501', '502']
+];
+
 // Fetch all students and their submission statuses
+$journeyIDs = implode("','", $journeys[$day]);
 $sql = "SELECT user.userID, user.userName, post.postContent, post.postImage, post.postTime, journey.jName, visitRecord.journeyID
         FROM user
         LEFT JOIN visitRecord ON user.userID = visitRecord.userID
         LEFT JOIN post ON visitRecord.visitID = post.visitID
         LEFT JOIN journey ON visitRecord.journeyID = journey.journeyID
-        WHERE user.userRole = 'student'
+        WHERE user.userRole = 'student' AND visitRecord.journeyID IN ('$journeyIDs')
         ORDER BY post.postTime DESC";
 $result = $conn->query($sql);
 
 $submitted = [];
 $missing = [];
 
+// Fetch all students
+$allStudentsSql = "SELECT userID, userName FROM user WHERE userRole = 'student'";
+$allStudentsResult = $conn->query($allStudentsSql);
+$allStudents = [];
+if ($allStudentsResult->num_rows > 0) {
+    while ($row = $allStudentsResult->fetch_assoc()) {
+        $allStudents[$row['userID']] = $row['userName'];
+    }
+}
+
 if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
         if ($row['postContent']) {
             $submitted[$row['journeyID']][$row['userID']][] = $row;
-        } else {
-            $missing[$row['journeyID']][] = $row;
         }
     }
-} else {
-    echo "No students found.";
+}
+
+// Determine missing students
+foreach ($allStudents as $userID => $userName) {
+    $missingJourneys = [];
+    foreach ($journeys[$day] as $journeyID) {
+        if (!isset($submitted[$journeyID][$userID])) {
+            $missingJourneys[] = $journeyID;
+        }
+    }
+    if (!empty($missingJourneys)) {
+        $missing[$userID] = ['userName' => $userName, 'journeys' => $missingJourneys];
+    }
 }
 ?>
 <!DOCTYPE html>
@@ -49,24 +81,37 @@ if ($result->num_rows > 0) {
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Schedule</title>
-    <link rel="icon" type="image/x-icon" href="image/icon.ico">
+    <link rel="icon" type="image/x-icon" href="../image/icon.ico">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="css/test.css">
-    <link rel="stylesheet" href="css/darkMode.css">
+    <link rel="stylesheet" href="../css/submission.css">
+    <link rel="stylesheet" href="../css/darkMode.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
 </head>
 <body>
     <div class="menu">
         <div class="logo">
-            <a href="adminPage.html">
-                <img src="image/logo.png" alt="Web Logo">
+            <a href="home.php">
+                <img src="../image/logo.png" alt="Web Logo">
             </a>
         </div>
         <ul class="menu-items">
-            <li><a href="schedule.html">Schedule</a></li>
-            <li><a href="room.html">Room</a></li>
-            <li><a href="submit.html">Submit</a></li>
+            <?php if ($userRole == 'teacher' or $userRole == 'admin'): ?>
+                <li><a href="schedule.php">Schedule</a></li>
+                <li><a href="room.php">Room</a></li>
+                <li><a href="submission.php">Submit</a></li>
+                <li><a href="chat.php">Chat</a></li>
+            <?php elseif ($userRole == 'test'): ?>
+                <li><a href="schedule.php">Schedule</a></li>
+                <li><a href="room.php">Room</a></li>
+                <li><a href="chat.php">Chat</a></li>
+                <li><a href="../test.php">test</a></li>
+                <li><a href="submission.php">Submit</a></li>
+            <?php else: ?>
+                <li><a href="schedule.php">Schedule</a></li>
+                <li><a href="room.html">Room</a></li>
+                <li><a href="chat.php">Chat</a></li>
+            <?php endif; ?>
         </ul>
     </div>
 
@@ -87,14 +132,14 @@ if ($result->num_rows > 0) {
     </div>
 
     <div class="dateSelecter">
-        <button onclick="loadSchedule('submit.html')">11</button>
-        <button onclick="loadSchedule('submit/day2Submit.html')">12</button>
-        <button onclick="loadSchedule('submit/day3Submit.html')">13</button>
-        <button onclick="loadSchedule('submit/day4Submit.html')">14</button>
-        <button onclick="loadSchedule('submit/day5Submit.html')">15</button>
+        <button onclick="loadSchedule('submission.php?day=1')">11</button>
+        <button onclick="loadSchedule('submission.php?day=2')">12</button>
+        <button onclick="loadSchedule('submission.php?day=3')">13</button>
+        <button onclick="loadSchedule('submission.php?day=4')">14</button>
+        <button onclick="loadSchedule('submission.php?day=5')">15</button>
     </div>
 
-    <h1>Day 1</h1>
+    <h1>Day <?php echo $day; ?></h1>
 
     <div class="submit-container">
         <?php foreach ($submitted as $journeyID => $students): ?>
@@ -112,23 +157,22 @@ if ($result->num_rows > 0) {
             </div>
         <?php endforeach; ?>
 
-        <?php foreach ($missing as $journeyID => $students): ?>
-            <div class="missingBox" id="box<?php echo $journeyID; ?>">
-                <h2>Missing for Journey <?php echo $journeyID; ?></h2>
-                <ul class="studentMissing" style="list-style-type:none;">
-                    <?php foreach ($students as $student): ?>
-                        <li>
-                            <button><?php echo htmlspecialchars($student['userName']); ?></button>
-                        </li>
-                    <?php endforeach; ?>
-                </ul>
-            </div>
-        <?php endforeach; ?>
+        <div class="missingBox">
+            <h2>Missing Submissions</h2>
+            <ul class="studentMissing" style="list-style-type:none;">
+                <?php foreach ($missing as $userID => $student): ?>
+                    <li>
+                        <button>
+                            <?php echo htmlspecialchars($student['userName']); ?> - Missing Journeys: <?php echo implode(', ', $student['journeys']); ?>
+                        </button>
+                    </li>
+                <?php endforeach; ?>
+            </ul>
+        </div>
     </div>
 
-    <script src="js/darkMode.js" async defer></script>
-    <script src="js/submit.js" async defer></script>
-    <script src="js/test.js" async defer></script>
+    <script src="../js/darkMode.js" async defer></script>
+    <script src="../js/submission.js" async defer></script>
 </body>
 </html>
 <?php

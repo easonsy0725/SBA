@@ -5,6 +5,8 @@ if (!isset($_SESSION['userID'])) {
     exit();
 }
 
+$userRole = $_SESSION['userRole'];
+
 $userID = $_SESSION['userID'];
 $servername = "localhost";
 $username = "root";
@@ -86,9 +88,22 @@ $conn->close();
             </a>
         </div>
         <ul class="menu-items">
-            <li><a href="schedule.php">Schedule</a></li>
-            <li><a href="room.html">Room</a></li>
-            <li><a href="chat.php">Chat</a></li>
+            <?php if ($userRole == 'teacher' or $userRole == 'admin'): ?>
+                <li><a href="schedule.php">Schedule</a></li>
+                <li><a href="room.php">Room</a></li>
+                <li><a href="submission.php">Submit</a></li>
+                <li><a href="chat.php">Chat</a></li>
+            <?php elseif ($userRole == 'test'): ?>
+                <li><a href="schedule.php">Schedule</a></li>
+                <li><a href="room.php">Room</a></li>
+                <li><a href="chat.php">Chat</a></li>
+                <li><a href="../test.php">test</a></li>
+                <li><a href="submit.php">Submit</a></li>
+            <?php else: ?>
+                <li><a href="schedule.php">Schedule</a></li>
+                <li><a href="room.html">Room</a></li>
+                <li><a href="chat.php">Chat</a></li>
+            <?php endif; ?>
         </ul>
     </div>
 

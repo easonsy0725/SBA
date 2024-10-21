@@ -59,7 +59,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             exit();
         }
     }
-    header("Location: schedule.php");
+    header("Location: ../schedule.php");
     exit();
 }
 
