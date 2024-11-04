@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (!isset($_SESSION['userID']) || ($_SESSION['userRole'] != 'admin' && $_SESSION['userRole'] != 'teacher')) {
-    header("Location: index.php");
+    header("Location: ../index.php");
     exit();
 }
 
@@ -80,7 +80,7 @@ $conn->close();
 </head>
 <body>
     <h1>Admin Page</h1>
-    <form method="POST" action="test.php">
+    <form method="POST" action="journeySet.php">
         <label for="journeyID">Select Journey:</label><br>
         <select id="journeyID" name="journeyID">
             <?php foreach ($journeys as $journey): ?>
@@ -95,7 +95,7 @@ $conn->close();
     </form>
 
     <h2>Add New Journey</h2>
-    <form method="POST" action="test.php">
+    <form method="POST" action="journeySet.php">
         <label for="newJourneyID">Journey ID:</label><br>
         <input type="text" id="newJourneyID" name="newJourneyID"><br>
         <label for="newJourneyName">Journey Name:</label><br>
@@ -108,7 +108,7 @@ $conn->close();
     </form>
 
     <h2>Delete Journey</h2>
-    <form method="POST" action="test.php">
+    <form method="POST" action="journeySet.php">
         <label for="deleteJourneyID">Journey ID:</label><br>
         <input type="text" id="deleteJourneyID" name="deleteJourneyID"><br>
         <button type="submit" name="delete">Delete Journey</button>

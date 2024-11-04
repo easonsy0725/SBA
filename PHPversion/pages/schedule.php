@@ -43,7 +43,7 @@ $userRole = $_SESSION['userRole'];
                 <li><a href="submit.php">Submit</a></li>
             <?php else: ?>
                 <li><a href="schedule.php">Schedule</a></li>
-                <li><a href="room.html">Room</a></li>
+                <li><a href="room.php">Room</a></li>
                 <li><a href="chat.php">Chat</a></li>
             <?php endif; ?>
         </ul>
@@ -134,7 +134,7 @@ $userRole = $_SESSION['userRole'];
             echo '<div class="schedule-item">';
             echo '<p>Location: Not Found</p>';
             echo '<p id="' . $id . '">Journey ' . ($id - $day) . ':</p>';
-            echo '<img src="../image/attractions/' . ($id == 101 ? '101.jpg' : '102.jpg') . '" alt="Not Found">';
+            echo '<img src="../image/attractions/' . ($id == 101 ? 'image not found' : 'image not found') . '" alt="Not Found">';
             echo '<ul>';
             echo '<li>Details not found</li>';
             echo '</ul>';

@@ -31,10 +31,10 @@ $userRole = $_SESSION['userRole'];
         </div>
         <ul class="menu-items">
             <li><a href="../schedule.php">Schedule</a></li>
-            <li><a href="../room.html">Room</a></li>
+            <li><a href="../room.php">Room</a></li>
             <li><a href="../chat.php">Chat</a></li>
             <?php if ($userRole == 'teacher'): ?>
-                <li><a href="../submit.html">Submit</a></li>
+                <li><a href="../submission/day5.php">Submit</a></li>
             <?php endif; ?>
         </ul>
     </div>

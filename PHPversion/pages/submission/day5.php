@@ -109,7 +109,7 @@ foreach ($allStudents as $userID => $userName) {
                 <li><a href="../submission.php">Submit</a></li>
             <?php else: ?>
                 <li><a href="../schedule.php">Schedule</a></li>
-                <li><a href="../room.html">Room</a></li>
+                <li><a href="../room.php">Room</a></li>
                 <li><a href="../chat.php">Chat</a></li>
             <?php endif; ?>
         </ul>

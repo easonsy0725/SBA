@@ -1,63 +1,62 @@
 <?php
-    session_start();
-    if (!isset($_SESSION['userID'])) {
-        header("Location: ../index.php");
-        exit();
+session_start();
+if (!isset($_SESSION['userID'])) {
+    header("Location: ../index.php");
+    exit();
+}
+
+$userRole = $_SESSION['userRole'];
+$isAdmin = isset($userRole) && $userRole == 'teacher' || $userRole == 'admin';
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $servername = "localhost";
+    $username = "root";
+    $password = "eason070725sy";
+    $dbname = "sba";
+
+    $conn = new mysqli($servername, $username, $password, $dbname);
+
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
     }
 
-    $userRole = $_SESSION['userRole'];
+    if (isset($_POST['delete']) && $isAdmin) {
+        $userID = $conn->real_escape_string($_POST['userID']);
+        $sendTime = $conn->real_escape_string($_POST['sendTime']);
+        $sql = "DELETE FROM chat WHERE userID='$userID' AND sendTime='$sendTime'";
 
-    $isAdmin = isset($_SESSION['userRole']) && $_SESSION['userRole'] == 'teacher';
+        if ($conn->query($sql) === TRUE) {
+            echo "Message deleted successfully";
+        } else {
+            echo "Error: " . $sql . "<br>" . $conn->error;
+        }
+    }
 
-    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-      $servername = "localhost";
-      $username = "root";
-      $password = "eason070725sy";
-      $dbname = "sba";
-  
-      $conn = new mysqli($servername, $username, $password, $dbname);
-  
-      if ($conn->connect_error) {
-          die("Connection failed: " . $conn->connect_error);
-      }
-  
-      if (isset($_POST['delete']) && $isAdmin) {
-          $userID = $conn->real_escape_string($_POST['userID']);
-          $sendTime = $conn->real_escape_string($_POST['sendTime']);
-          $sql = "DELETE FROM chat WHERE userID='$userID' AND sendTime='$sendTime'";
-  
-          if ($conn->query($sql) === TRUE) {
-              echo "Message deleted successfully";
-          } else {
-              echo "Error: " . $sql . "<br>" . $conn->error;
-          }
-      }
-  
-      if (isset($_POST['send'])) {
-          $userID = $_SESSION['userID'];
-          $message = $conn->real_escape_string($_POST['message']);
-          $image = '';
-  
-          if (!empty($_FILES['image']['name'])) {
-              $image = '../../image/' . basename($_FILES['image']['name']);
-              move_uploaded_file($_FILES['image']['tmp_name'], $image);
-          }
-  
-          if (!empty($message) || !empty($image)) {
-              $sql = "INSERT INTO chat (userID, sendTime, message, image) VALUES ('$userID', NOW(), '$message', '$image')";
-  
-              if ($conn->query($sql) === TRUE) {
-                  echo "New message sent successfully";
-              } else {
-                  echo "Error: " . $sql . "<br>" . $conn->error;
-              }
-          }
-      }
-  
-      $conn->close();
-      header("Location: chat.php");
-      exit();
-  }
+    if (isset($_POST['send'])) {
+        $userID = $_SESSION['userID'];
+        $message = $conn->real_escape_string($_POST['message']);
+        $image = '';
+
+        if (!empty($_FILES['image']['name'])) {
+            $image = '../../image/' . basename($_FILES['image']['name']);
+            move_uploaded_file($_FILES['image']['tmp_name'], $image);
+        }
+
+        if (!empty($message) || !empty($image)) {
+            $sql = "INSERT INTO chat (userID, sendTime, message, image) VALUES ('$userID', NOW(), '$message', '$image')";
+
+            if ($conn->query($sql) === TRUE) {
+                echo "New message sent successfully";
+            } else {
+                echo "Error: " . $sql . "<br>" . $conn->error;
+            }
+        }
+    }
+
+    $conn->close();
+    header("Location: chat.php");
+    exit();
+}
 ?>
 
 <!DOCTYPE html>
@@ -93,7 +92,7 @@
                 <li><a href="submit.php">Submit</a></li>
             <?php else: ?>
                 <li><a href="schedule.php">Schedule</a></li>
-                <li><a href="room.html">Room</a></li>
+                <li><a href="room.php">Room</a></li>
                 <li><a href="chat.php">Chat</a></li>
             <?php endif; ?>
         </ul>

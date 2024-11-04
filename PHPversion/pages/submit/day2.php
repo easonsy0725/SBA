@@ -88,7 +88,7 @@ $conn->close();
         </div>
         <ul class="menu-items">
             <li><a href="../schedule/day2.php">Schedule</a></li>
-            <li><a href="../room.html">Room</a></li>
+            <li><a href="../room.php">Room</a></li>
             <li><a href="../chat.php">Chat</a></li>
         </ul>
     </div>
