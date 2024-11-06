@@ -92,19 +92,19 @@ $userRole = $_SESSION['userRole'];
         }
 
         $journeyIDs = [101, 102]; // Journey IDs for the schedule
-        $day = 100;
 
         foreach ($journeyIDs as $id) {
           $sql = "SELECT jName, jDescribe FROM journey WHERE journeyID = $id";
           $result = $conn->query($sql);
-
+          $day = $id - ($journeyIDs[0] - 1);
+          
           if ($result->num_rows > 0) {
             while($row = $result->fetch_assoc()) {
               if ($counter < 1){
                 echo '<div class="schedule-item">';
                 echo '<h3>Date: 2024-07-11</h3>';//use counter to change date
                 echo '<p>Location: ' . $row["jName"] . '</p>';
-                echo '<p id="' . $id . '">Journey ' . ($id - $day) . ':</p>';
+                echo '<p id="' . $id . '">Journey ' . $day . ':</p>';
                 echo '<img src="../image/attractions/' . ($id == 101 ? '101.jpg' : '102.jpg') . '" alt="' . $row["jName"] . '">';
                 echo '<ul>';
                 $details = explode(',', $row["jDescribe"]);
@@ -118,7 +118,7 @@ $userRole = $_SESSION['userRole'];
               }else{
                 echo '<div class="schedule-item">';
                 echo '<p>Location: ' . $row["jName"] . '</p>';
-                echo '<p id="' . $id . '">Journey ' . ($id - $day) . ':</p>';
+                echo '<p id="' . $id . '">Journey ' . $day . ':</p>';
                 echo '<img src="../image/attractions/' . ($id == 101 ? '101.jpg' : '102.jpg') . '" alt="' . $row["jName"] . '">';
                 echo '<ul>';
                 $details = explode(',', $row["jDescribe"]);
@@ -133,7 +133,7 @@ $userRole = $_SESSION['userRole'];
           } else {
             echo '<div class="schedule-item">';
             echo '<p>Location: Not Found</p>';
-            echo '<p id="' . $id . '">Journey ' . ($id - $day) . ':</p>';
+            echo '<p id="' . $id . '">Journey ' . $day . ':</p>';
             echo '<img src="../image/attractions/' . ($id == 101 ? 'image not found' : 'image not found') . '" alt="Not Found">';
             echo '<ul>';
             echo '<li>Details not found</li>';
