@@ -101,12 +101,13 @@ foreach ($allStudents as $userID => $userName) {
                 <li><a href="../room.php">Room</a></li>
                 <li><a href="../submission.php">Submit</a></li>
                 <li><a href="../chat.php">Chat</a></li>
+                <li><a href="../setting.php">Settings</a></li>
             <?php elseif ($userRole == 'test'): ?>
                 <li><a href="../schedule.php">Schedule</a></li>
                 <li><a href="../room.php">Room</a></li>
                 <li><a href="../chat.php">Chat</a></li>
                 <li><a href="../../test.php">test</a></li>
-                <li><a href="../submission.php">Submit</a></li>
+                <li><a href="../submit.php">Submit</a></li>
             <?php else: ?>
                 <li><a href="../schedule.php">Schedule</a></li>
                 <li><a href="../room.php">Room</a></li>

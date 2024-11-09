@@ -29,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $postImage = '';
 
         if (isset($_FILES['image' . ($index + 1)]) && $_FILES['image' . ($index + 1)]['error'] == 0) {
-            $targetDir = "../../uploads/";
+            $targetDir = "../uploads/";
             $targetFile = $targetDir . basename($_FILES['image' . ($index + 1)]['name']);
             if (move_uploaded_file($_FILES['image' . ($index + 1)]['tmp_name'], $targetFile)) {
                 $postImage = $targetFile;
@@ -93,6 +93,7 @@ $conn->close();
                 <li><a href="room.php">Room</a></li>
                 <li><a href="submission.php">Submit</a></li>
                 <li><a href="chat.php">Chat</a></li>
+                <li><a href="setting.php">Settings</a></li>
             <?php elseif ($userRole == 'test'): ?>
                 <li><a href="schedule.php">Schedule</a></li>
                 <li><a href="room.php">Room</a></li>
