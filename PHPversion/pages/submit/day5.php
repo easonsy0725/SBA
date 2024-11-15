@@ -5,7 +5,9 @@ if (!isset($_SESSION['userID'])) {
     exit();
 }
 
+$userRole = $_SESSION['userRole'];
 $userID = $_SESSION['userID'];
+
 $servername = "localhost";
 $username = "root";
 $password = "eason070725sy";
