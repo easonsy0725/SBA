@@ -1,13 +1,18 @@
 <?php
+require '../../../vendor/autoload.php';
+
+use Cloudinary\Cloudinary;
+use Cloudinary\Configuration\Configuration;
+use Cloudinary\Api\Upload\UploadApi;
+
 session_start();
 if (!isset($_SESSION['userID'])) {
-    header("Location: ../index.php");
+    header("Location: ../../index.php");
     exit();
 }
 
 $userRole = $_SESSION['userRole'];
 $userID = $_SESSION['userID'];
-
 $servername = "localhost";
 $username = "root";
 $password = "eason070725sy";
@@ -21,6 +26,18 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
+// Configure Cloudinary
+Configuration::instance([
+    'cloud' => [
+        'cloud_name' => 'dn6yaoysg',
+        'api_key' => '385727789337782',
+        'api_secret' => 'ybpqIxfgw3G9IR2ap8VayONc1sY'
+    ],
+    'url' => [
+        'secure' => true
+    ]
+]);
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $journeyIDs = [201, 202]; // Adjust journey IDs based on the day
     foreach ($journeyIDs as $index => $journeyID) {
@@ -29,12 +46,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $postImage = '';
 
         if (isset($_FILES['image' . ($index + 1)]) && $_FILES['image' . ($index + 1)]['error'] == 0) {
-            $targetDir = "../../uploads/";
-            $targetFile = $targetDir . basename($_FILES['image' . ($index + 1)]['name']);
-            if (move_uploaded_file($_FILES['image' . ($index + 1)]['tmp_name'], $targetFile)) {
-                $postImage = $targetFile;
+            $uploadResult = (new UploadApi())->upload($_FILES['image' . ($index + 1)]['tmp_name']);
+            if (isset($uploadResult['secure_url'])) {
+                $postImage = $uploadResult['secure_url'];
             } else {
-                echo "Error uploading file: " . $_FILES['image' . ($index + 1)]['error'];
+                echo "Error uploading file: " . json_encode($uploadResult);
                 exit();
             }
         }
@@ -61,7 +77,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             exit();
         }
     }
-    header("Location: ../schedule.php");
+    header("Location: ../schedule/day2.php");
     exit();
 }
 
