@@ -1,0 +1,144 @@
+* {
+  font-family: "微軟正黑體", "Microsoft JhengHei", Tahoma, Verdana, Arial, sans-serif;
+}
+
+.menu {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu .logo {
+  margin-left: 20px;
+}
+
+.menu .logo a {
+  color: #fff;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+.menu .logo img {
+  max-height: 65px; /* Increased the max height of the logo */
+  margin-right: 10px;
+}
+
+.menu .menu-items {
+  display: flex;
+}
+
+.menu .menu-items li {
+  list-style-type: none;
+  margin: 0 10px;
+}
+
+.menu .menu-items a {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+.menu .menu-items a:hover {
+  background-color: #555;
+}
+
+.menu .menu-items li a img {
+  max-height: 25px; /* Set the max height of the settings icon */
+  vertical-align: middle; /* Align the image vertically with the text */
+}
+
+nav {
+  position: relative;
+}
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  height: 3px;
+  width: 25px;
+  background: black;
+  margin-bottom: 4px;
+  border-radius: 3px;
+}
+
+.menu-items {
+  list-style: none;
+  padding: 0;
+  display: none; /* Ensure this is set to none */
+  flex-direction: row;
+}
+
+.menu-items li {
+  margin-right: 20px;
+}
+
+.menu-items a {
+  text-decoration: none;
+  color: black;
+}
+
+@media (max-width: 768px) {
+  .menu {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    display: flex;
+  }
+
+  .menu .logo {
+    margin-bottom: 10px;
+  }
+
+  .menu .logo a {
+    color: #fff;
+    text-decoration: none;
+    display: flex;
+  }
+
+  .menu .logo img {
+    max-height: 50px;
+    margin-right: 5px;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .menu-items {
+    display: none; /* Ensure this is set to none */
+    flex-direction: column;
+    width: 100%;
+    background: white;
+    position: absolute;
+    top: 40px;
+    left: 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .menu-items li {
+    margin: 0;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .menu-items li:last-child {
+    border-bottom: none;
+  }
+
+  .menu-items a {
+    padding: 10px;
+    display: block;
+  }
+
+  .menu-items.show {
+    display: flex;
+  }
+}
