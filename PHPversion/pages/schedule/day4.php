@@ -30,18 +30,18 @@ $userRole = $_SESSION['userRole'];
             </a>
         </div>
         <ul class="menu-items">
-            <?php if ($userRole == 'teacher' or $userRole == 'admin'): ?>
+            <?php if ($userRole == 'teacher'): ?>
                 <li><a href="../schedule.php">Schedule</a></li>
                 <li><a href="../room.php">Room</a></li>
                 <li><a href="../submission.php">Submit</a></li>
                 <li><a href="../chat.php">Chat</a></li>
-                <li><a href="../setting.php">Settings</a></li>
-            <?php elseif ($userRole == 'test'): ?>
+            <?php elseif ($userRole == 'test' or $userRole == 'admin'): ?>
                 <li><a href="../schedule.php">Schedule</a></li>
                 <li><a href="../room.php">Room</a></li>
                 <li><a href="../chat.php">Chat</a></li>
                 <li><a href="../../test.php">test</a></li>
-                <li><a href="../submit.php">Submit</a></li>
+                <li><a href="../submission.php">Submit</a></li>
+                <li><a href="../setting.php">Settings</a></li>
             <?php else: ?>
                 <li><a href="../schedule.php">Schedule</a></li>
                 <li><a href="../room.php">Room</a></li>
