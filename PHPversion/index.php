@@ -1,35 +1,35 @@
 <?php
 session_start();
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-  $servername = "localhost";
-  $username = "root";
-  $password = "eason070725sy";
-  $dbname = "sba";
+    $servername = "localhost";
+    $username = "root";
+    $password = "eason070725sy";
+    $dbname = "sba";
 
-  // Create connection
-  $conn = new mysqli($servername, $username, $password, $dbname);
-  if ($conn->connect_error) {
-      die("Connection failed: " . $conn->connect_error);
-  }
+    // Create connection
+    $conn = new mysqli($servername, $username, $password, $dbname);
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
 
-  $loginUsername = $conn->real_escape_string($_POST['username']);
-  $loginPassword = $conn->real_escape_string($_POST['password']);
+    $loginUsername = $conn->real_escape_string($_POST['username']);
+    $loginPassword = $conn->real_escape_string($_POST['password']);
 
-  $sql = "SELECT userID, userRole FROM user WHERE username='$loginUsername' AND password='$loginPassword'";
-  $result = $conn->query($sql);
+    $sql = "SELECT userID, userRole FROM user WHERE username='$loginUsername' AND password='$loginPassword'";
+    $result = $conn->query($sql);
 
-  if ($result->num_rows == 1) {
-      $row = $result->fetch_assoc();
-      $_SESSION['userID'] = $row['userID'];
-      $_SESSION['userRole'] = $row['userRole'];
+    if ($result->num_rows == 1) {
+        $row = $result->fetch_assoc();
+        $_SESSION['userID'] = $row['userID'];
+        $_SESSION['userRole'] = $row['userRole'];
 
-      header("Location: pages/home.php");
-      exit();
-  } else {
-      $error = "Invalid username or password";
-  }
+        header("Location: pages/home.php");
+        exit();
+    } else {
+        $error = "Invalid username or password";
+    }
 
-  $conn->close();
+    $conn->close();
 }
 ?>
 

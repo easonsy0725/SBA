@@ -104,6 +104,12 @@ $conn->close();
         <?php endforeach; ?>
     </div>
 
+    <?php if($userRole == 'admin' || $userRole == 'teacher'): ?>
+        <div class="admin-buttons">
+            <a href="manageRoom.php" class="button">Manage Rooms</a>
+        </div>
+    <?php endif; ?>
+
     <script src="../js/darkMode.js"></script>
     
 </body>
