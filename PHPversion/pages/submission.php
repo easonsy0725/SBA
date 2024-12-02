@@ -84,6 +84,7 @@ foreach ($allStudents as $userID => $userName) {
     <link rel="icon" type="image/x-icon" href="../image/icon.ico">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/menu.css">
     <link rel="stylesheet" href="../css/submission.css">
     <link rel="stylesheet" href="../css/darkMode.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />

@@ -20,6 +20,7 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <link rel="apple-touch-icon" href="../image/small_icon.ico">
     <link rel="icon" type="image/x-icon" href="../image/small_icon.ico">
+    <link rel="stylesheet" href="../css/menu.css">
     <link rel="stylesheet" href="../css/home.css">
     <link rel="stylesheet" href="../css/darkMode.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
